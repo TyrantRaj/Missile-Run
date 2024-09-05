@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Missile
+  - Pointer
+  - Border
+  - SP
+  - LeftPS
+  - RightPS
+  - SPspawn
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - spawn point layer
+  - Water
+  - UI
+  - minimap
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Radar
+    uniqueID: 3934786953
+    locked: 0

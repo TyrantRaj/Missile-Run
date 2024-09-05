@@ -1,0 +1,3330 @@
+fileFormatVersion: 2
+guid: 81fac6d714b8e2149a0ed2b06293209e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: backgroundmaker2 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 288
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924ad46f35f732c4f95d058a8297c37e
+      internalID: 472378357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 412
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703a60fe164038140b430aa542a5d623
+      internalID: 702642174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 412
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8019c4e6efafc4eacbd0b4d2a32dde
+      internalID: -1112460011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 433
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45fcfde0a215b94e8b370e388737dd1
+      internalID: -778521865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_4
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 371
+        width: 112
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb73e25875ced048993e424bea3e912
+      internalID: -1923824085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_5
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 0
+        width: 7
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378a1762dfb227c4fbe359b013bd47cc
+      internalID: 1852138952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_6
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 0
+        width: 4
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be60f548e9a7b814999db051ae986ffa
+      internalID: -1786856898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_7
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 0
+        width: 4
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574abc12bdbe82b4fa20250245741983
+      internalID: 93289597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_8
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 363
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15caaa5d25ec3e5419d65a6af4d76a86
+      internalID: -271748571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_9
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 399
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d784764bc7950488f3a8f000500267
+      internalID: 1761478169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_10
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 384
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43da44fd36496aa42afb2fab2041327d
+      internalID: 339265127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_11
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 332
+        width: 52
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c98a62382d17cf42bcf1ab228b66f7c
+      internalID: 656620021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_12
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 343
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00deb2bc46d93d34fb2e03b57dbc87d7
+      internalID: -1780340232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_13
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 356
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d9f1678e7c3cc4299f9a669f0170e2
+      internalID: 1746783670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_14
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 349
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996eef3fe2d0a12479ac6aaaf3447fb1
+      internalID: 1300392743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_15
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 356
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1208462f6c1ce454c89ac036a25cb5a3
+      internalID: -1045285331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_16
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 338
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c144cc5e81fbf438f9f8e01ecfc9fb
+      internalID: 689368127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_17
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 327
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f26fb668a348414698d268dcf58af42
+      internalID: -507988469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_18
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 324
+        width: 42
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 542c83ee33fb8334783109366d66ede3
+      internalID: -1571522817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_19
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 347
+        width: 12
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219640b188025b145b23ff78c0bdb6e8
+      internalID: -1455828849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_20
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 0
+        width: 4
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b818dd53e05ffc94782ac6d076975268
+      internalID: 395200613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 330
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa2d5feac2d7d44e9127909c0049dcf
+      internalID: 226634714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_22
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 324
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f4bf05f527d29419b55d281b224f10
+      internalID: 683298309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_23
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 324
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9a754daa78f434eac900f7f52a4551
+      internalID: -2105408426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_24
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 322
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 745b6457b9aec134e9a1677078a4b7ff
+      internalID: -1957806847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_25
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 295
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a530848fc29c5db469350b5d0b1c0005
+      internalID: -240465472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_26
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 309
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18a84355171d59459eb60bfaa8470b7
+      internalID: 1146818460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_27
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 307
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068e63de0e19ca949a91e0240e20c980
+      internalID: -2047986443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_28
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 313
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5efe8c7eada35a4489aff063f97da9dd
+      internalID: 9971300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_29
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 295
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed87b5ab263f4c4dbcc0713ae63ecb1
+      internalID: -1625316546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_30
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 258
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d1e3dda7555ca438780042f518b8c9
+      internalID: 1601267911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_31
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 294
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289859be677db064db99f49cfc34b425
+      internalID: -883769342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_32
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 288
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30eecfb908e18f442bf89e61bd5274d5
+      internalID: -1620734098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_33
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 291
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d67a3c6054a30e4eb38438cc3a0bd88
+      internalID: 1953815682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_34
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 294
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747f15edffd15b34b89fe06ecd6e4387
+      internalID: -885478705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_35
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 276
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0313bfa1c16702a4fa2ed926307480f0
+      internalID: -904687052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_36
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 288
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7488f27e4d339304fbb7dcc262c0de19
+      internalID: 1658479786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_37
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 264
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd18fbd6f0d455488eb15da98751eaf
+      internalID: -522709789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 244
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be756b3a16c4c54b8d7bf720c46c6f0
+      internalID: 1314277040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_39
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 264
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c5de4981b83d74ba8ed063f252a57c
+      internalID: -245350160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_40
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 228
+        width: 93
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25a494e46788224a9c5d6512ec488cc
+      internalID: 1280596018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_41
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 258
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae26497fb77a444da6777b9472cfcb5
+      internalID: 1517163831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_42
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 264
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8acb36cedc587c440ae649cc9e20d40e
+      internalID: 1711694148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_43
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 240
+        width: 38
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f884a268ff6b14ba6325f46048c8ab
+      internalID: -760697757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_44
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 230
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0372d5c6eb87541ba4e0f272311566
+      internalID: 1049509469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_45
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 257
+        width: 59
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe559354c97d4d49a3502795f24541f
+      internalID: -1006390476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_46
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 236
+        width: 41
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b732e43934e88b4b93357699678b8ed
+      internalID: -2055702156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_47
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 228
+        width: 93
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241b3e747134ed7499477971e9ed93ba
+      internalID: 1705813422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_48
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 269
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbc59dc52869d04185b89570dc0f92c
+      internalID: 1463049866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_49
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 264
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f1fed4b85c7454e839904fb2b8841c
+      internalID: 1117456952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_50
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 244
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8614a8e4f77d6459d27d148d11375e
+      internalID: 1888429601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_51
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 228
+        width: 115
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726fae56952d5dc4dbfada9616d792b0
+      internalID: 1406418106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_52
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 265
+        width: 40
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ce1313bd09cf9478ba93b312039f31
+      internalID: -411629287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_53
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 242
+        width: 38
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276b05616b3019849870e5a3fdad4893
+      internalID: 368311646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_54
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 252
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994de2490d9dde642abda746e80769b7
+      internalID: -183564007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_55
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 244
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aed651343250ed45afcf02468998559
+      internalID: -1380575795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_56
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 219
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776afe840fdfeb943ba58e87fa676426
+      internalID: 2129632051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_57
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 235
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eadf903a110850948b877c5f6856569c
+      internalID: 127102401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_58
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 266
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5b2ac64ab02524cb96e6ce773651b8
+      internalID: -689837503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_59
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 252
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bf109c7263a85488cb0e72ad1bd421
+      internalID: -1937012617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_60
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 230
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d1ed7277441aa4697ac621fe963394
+      internalID: 1881896984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_61
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 222
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3f00e71b43f9e4480696006bd1b8a3
+      internalID: -347529611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_62
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 197
+        width: 61
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3dba9ec3d284d42ad334f9ce5407ae
+      internalID: 1161604488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_63
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 192
+        width: 59
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a0ce2f4ad979343819912256af8155
+      internalID: -627518658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_64
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 173
+        width: 89
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd9bf1deed985c4996a795cc391bb0a
+      internalID: -1554139266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_65
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 182
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d6cd2ee7b75644c84015db8d8b607a
+      internalID: 1545099232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_66
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 216
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed3a737446e15a4394e4f7950d285ff
+      internalID: -529427231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_67
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 198
+        width: 58
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d77d82c1d227e41826a0bfdbbf472f
+      internalID: 1317564094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_68
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 198
+        width: 59
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456619444fd039a42a574dfdf06866e2
+      internalID: -2132300507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_69
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 217
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f30dc2abd596f43b875aa57caa46f0
+      internalID: 266256106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_70
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 180
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7439edef44524c4a8f5af0d208823a7
+      internalID: -337531631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_71
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 180
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e30fee6ac484674dac10f54909c8a54
+      internalID: 1647449047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_72
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 159
+        width: 47
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cdab6802a65af4797c399fdbdf2af6
+      internalID: -737604443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_73
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 156
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91e94b358179ad44858bcebea8e3e99
+      internalID: 1373181235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_74
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 186
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db04958f901ae0a4b9853d0ac61448c7
+      internalID: -2082539229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_75
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 162
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da4ba29b4707ef45a3025d7a977465c
+      internalID: 1910967998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_76
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 178
+        width: 50
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de4b2b2e62e9a04890a283cd0246281
+      internalID: 1814498932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_77
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 186
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b97bbccada75c248b235612c748486d
+      internalID: -459007628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_78
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 180
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6589ae581fb67ed4c9d808b6b0a40917
+      internalID: 237740408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_79
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 4
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a51ea0a12a4dc942afaabd3ba1177f0
+      internalID: -1488910240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_80
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 0
+        width: 7
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4acc30c0db5b104a82411d1f94aac3f
+      internalID: 837654667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 162
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 825a6364791bbab4ab423fece3369b86
+      internalID: 677209259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_82
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 165
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfa8ffea236f4d4c99695ecfab0767f
+      internalID: 1065278665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_83
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 163
+        width: 39
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88da64b007bc02d4a965886865d5d0e2
+      internalID: -1987403540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_84
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 165
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1630a2b8ee8fb4f9dd5dd48ba7ca42
+      internalID: -762132587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_85
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 174
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e20f344ead7264e9d7701a4f7fd9aa
+      internalID: -1874046155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_86
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 162
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6091251ae13bb4f4d8ca2806f1d543b1
+      internalID: 1342063974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_87
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 160
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c343cda6ca211b744a954365279f094d
+      internalID: -1076202554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_88
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 162
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41765d7ca1bd80346b5f3ccf14c8afc6
+      internalID: 452054065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_89
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 159
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65185c5911d3b24428090136f225b647
+      internalID: -1504233310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_90
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 163
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de18eaec4096a314faffea8c57ce3e0b
+      internalID: -264085189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_91
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 168
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8eeb3666e79a54a8f552599b2f9056
+      internalID: -1646392748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_92
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 137
+        width: 45
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed288d2c120de8547a58b8b694d23329
+      internalID: -1491830235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_93
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 156
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316b763e2c0260c4995e14a5ecdf1829
+      internalID: -1969670714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_94
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 156
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40a41629fc947f4ab9387995761d31a
+      internalID: 540028916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_95
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 137
+        width: 125
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d34af6415468044a9b582c33cb11833
+      internalID: 2075626983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_96
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 140
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5799ed213611df94c8129674199ea273
+      internalID: 783426751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_97
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 137
+        width: 45
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c21b5489a74ab46bbd5741a9f139e4
+      internalID: 1914205805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_98
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 137
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7d43190952c2b4d993ac05a1bbdadb
+      internalID: 95382484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_99
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 140
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9049a80856a29cd4ab8ff3a1b072360a
+      internalID: -1489731607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_100
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 156
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9aa594e83746946b5fe4c55b6d96ea
+      internalID: -1078231929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_101
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 137
+        width: 45
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8635fd38986c3439b437a2d6d557f2
+      internalID: -2026063899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_102
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 126
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5891bdeaffa1ea4699f822c9c7ac5c1
+      internalID: 1831600130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_103
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 107
+        width: 42
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02176bdaa72393e459b361da6f731705
+      internalID: -817732179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_104
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 111
+        width: 42
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3b9dc2ba401e84f94bd8648aaadf18
+      internalID: 1140586244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_105
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 126
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b6e0833d1cad943a57496c2e66ef41
+      internalID: -2069531114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_106
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 114
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe89d7d84f6e5cf41a2bb0cf3bf1aeff
+      internalID: 917413233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_107
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 100
+        width: 99
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbe66f0f498ec8409b1a9ba4d921b2a
+      internalID: 954921249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_108
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 126
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fa487845392894b80f7216fb809b6e
+      internalID: 769689694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_109
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee158289c46c4664d85ef332c440a594
+      internalID: -2067428769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_110
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 95
+        width: 93
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7833660e48f7a7e4980970c5ba86d79e
+      internalID: -820910279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_111
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 96
+        width: 104
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bd5681ec9937646b7ed9eeb1ad7ded
+      internalID: 1801743054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_112
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 116
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be405317a726d51429c8131f428d83e9
+      internalID: -1615078781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_113
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 102
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54b692829d7ff040a0999f7840a2070
+      internalID: 2110624651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_114
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 96
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c840b28c309f9841af44a657678547c
+      internalID: -1616172737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_115
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 102
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a860f15b9eb84f468e8d49857eea089
+      internalID: 2066403070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_116
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 102
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9f6207930e65f40bee0e25d37c9099
+      internalID: -2009298376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_117
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 66
+        width: 59
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50dec600557eb34b986ff98f00c13ac
+      internalID: 93527811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_118
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 69
+        width: 55
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6a6bd08268b414386df590c42c0f5e
+      internalID: -1354934438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_119
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 66
+        width: 55
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd963e305fc71244590352bd7a707115
+      internalID: 2109736216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_120
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 58
+        width: 63
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73984a934c8d35499bec611839c2428
+      internalID: 1169477751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_121
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 64
+        width: 60
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9edc550d456edee4681d2cb317525b74
+      internalID: 1261523070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_122
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 70
+        width: 58
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20892f12e5896004a86f1b5341986000
+      internalID: -2009293070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_123
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 37
+        width: 40
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4117599b69be6764290e609da9947998
+      internalID: 179544066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_124
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 50
+        width: 50
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6fe980b6912041419eefe1f3ba93ae3
+      internalID: -1020466413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_125
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 62
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848f8a5013752cf40bbc244fe2836498
+      internalID: -267648545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_126
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 50
+        width: 47
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99f383970c56c84a9161f627170d0f6
+      internalID: -1757724996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_127
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 50
+        width: 47
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d29688688ffb7d45924449626c97253
+      internalID: -907909203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_128
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 58
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad0f547d5be698c48b49c62135a8c9fe
+      internalID: -271498316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_129
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 52
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac2494f688491d48ad5981ba4b3ab1c
+      internalID: -2006812867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_130
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 35
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f4c2956ba9c8b4e8fb138e359d7426
+      internalID: 586257834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_131
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 46
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952604ef8ccf0f042824b575387f8422
+      internalID: -577460372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_132
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 50
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491842dc00c79664c8db6acfaa6e8349
+      internalID: -448237710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_133
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 37
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8a9d74e4435fc418832a8270c937b7
+      internalID: 809836188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_134
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 35
+        width: 39
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11500d5730fce2e4985bfc59bf9fa1ff
+      internalID: 991683448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_135
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 35
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcec43b99fd5a3045b953be64a9ff4c9
+      internalID: -576528891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_136
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 35
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5c46dc3c9d1184e8a3b67cc55b57c6
+      internalID: -149730115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_137
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 36
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193fa63a2cdb8a84ba54f8ced1c488d1
+      internalID: -782408635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_138
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 36
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4995dab8685fc324b94639708f3dbdd5
+      internalID: -836091403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_139
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 35
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415194b253d35bb44845b46817baa05b
+      internalID: 742355156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_140
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 35
+        width: 41
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf5ddc5dfbf5684cbf5052ca89a544e
+      internalID: -1953219872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_141
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 37
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea5c9e5bc1fe384f8f12e033f7f75a0
+      internalID: 1330294227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_142
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 37
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb59bd1bbb69445488c075892c4c3405
+      internalID: -1329906398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_143
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 22
+        width: 384
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a60d5e533cd20449f2d250c2e1ff86
+      internalID: 526639961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgroundmaker2 1_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6
+        width: 384
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71401d3e5afbf7f4f972c30cdcb94a22
+      internalID: 1556245080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      backgroundmaker2 1_0: 472378357
+      backgroundmaker2 1_1: 702642174
+      backgroundmaker2 1_10: 339265127
+      backgroundmaker2 1_100: -1078231929
+      backgroundmaker2 1_101: -2026063899
+      backgroundmaker2 1_102: 1831600130
+      backgroundmaker2 1_103: -817732179
+      backgroundmaker2 1_104: 1140586244
+      backgroundmaker2 1_105: -2069531114
+      backgroundmaker2 1_106: 917413233
+      backgroundmaker2 1_107: 954921249
+      backgroundmaker2 1_108: 769689694
+      backgroundmaker2 1_109: -2067428769
+      backgroundmaker2 1_11: 656620021
+      backgroundmaker2 1_110: -820910279
+      backgroundmaker2 1_111: 1801743054
+      backgroundmaker2 1_112: -1615078781
+      backgroundmaker2 1_113: 2110624651
+      backgroundmaker2 1_114: -1616172737
+      backgroundmaker2 1_115: 2066403070
+      backgroundmaker2 1_116: -2009298376
+      backgroundmaker2 1_117: 93527811
+      backgroundmaker2 1_118: -1354934438
+      backgroundmaker2 1_119: 2109736216
+      backgroundmaker2 1_12: -1780340232
+      backgroundmaker2 1_120: 1169477751
+      backgroundmaker2 1_121: 1261523070
+      backgroundmaker2 1_122: -2009293070
+      backgroundmaker2 1_123: 179544066
+      backgroundmaker2 1_124: -1020466413
+      backgroundmaker2 1_125: -267648545
+      backgroundmaker2 1_126: -1757724996
+      backgroundmaker2 1_127: -907909203
+      backgroundmaker2 1_128: -271498316
+      backgroundmaker2 1_129: -2006812867
+      backgroundmaker2 1_13: 1746783670
+      backgroundmaker2 1_130: 586257834
+      backgroundmaker2 1_131: -577460372
+      backgroundmaker2 1_132: -448237710
+      backgroundmaker2 1_133: 809836188
+      backgroundmaker2 1_134: 991683448
+      backgroundmaker2 1_135: -576528891
+      backgroundmaker2 1_136: -149730115
+      backgroundmaker2 1_137: -782408635
+      backgroundmaker2 1_138: -836091403
+      backgroundmaker2 1_139: 742355156
+      backgroundmaker2 1_14: 1300392743
+      backgroundmaker2 1_140: -1953219872
+      backgroundmaker2 1_141: 1330294227
+      backgroundmaker2 1_142: -1329906398
+      backgroundmaker2 1_143: 526639961
+      backgroundmaker2 1_144: 1556245080
+      backgroundmaker2 1_15: -1045285331
+      backgroundmaker2 1_16: 689368127
+      backgroundmaker2 1_17: -507988469
+      backgroundmaker2 1_18: -1571522817
+      backgroundmaker2 1_19: -1455828849
+      backgroundmaker2 1_2: -1112460011
+      backgroundmaker2 1_20: 395200613
+      backgroundmaker2 1_21: 226634714
+      backgroundmaker2 1_22: 683298309
+      backgroundmaker2 1_23: -2105408426
+      backgroundmaker2 1_24: -1957806847
+      backgroundmaker2 1_25: -240465472
+      backgroundmaker2 1_26: 1146818460
+      backgroundmaker2 1_27: -2047986443
+      backgroundmaker2 1_28: 9971300
+      backgroundmaker2 1_29: -1625316546
+      backgroundmaker2 1_3: -778521865
+      backgroundmaker2 1_30: 1601267911
+      backgroundmaker2 1_31: -883769342
+      backgroundmaker2 1_32: -1620734098
+      backgroundmaker2 1_33: 1953815682
+      backgroundmaker2 1_34: -885478705
+      backgroundmaker2 1_35: -904687052
+      backgroundmaker2 1_36: 1658479786
+      backgroundmaker2 1_37: -522709789
+      backgroundmaker2 1_38: 1314277040
+      backgroundmaker2 1_39: -245350160
+      backgroundmaker2 1_4: -1923824085
+      backgroundmaker2 1_40: 1280596018
+      backgroundmaker2 1_41: 1517163831
+      backgroundmaker2 1_42: 1711694148
+      backgroundmaker2 1_43: -760697757
+      backgroundmaker2 1_44: 1049509469
+      backgroundmaker2 1_45: -1006390476
+      backgroundmaker2 1_46: -2055702156
+      backgroundmaker2 1_47: 1705813422
+      backgroundmaker2 1_48: 1463049866
+      backgroundmaker2 1_49: 1117456952
+      backgroundmaker2 1_5: 1852138952
+      backgroundmaker2 1_50: 1888429601
+      backgroundmaker2 1_51: 1406418106
+      backgroundmaker2 1_52: -411629287
+      backgroundmaker2 1_53: 368311646
+      backgroundmaker2 1_54: -183564007
+      backgroundmaker2 1_55: -1380575795
+      backgroundmaker2 1_56: 2129632051
+      backgroundmaker2 1_57: 127102401
+      backgroundmaker2 1_58: -689837503
+      backgroundmaker2 1_59: -1937012617
+      backgroundmaker2 1_6: -1786856898
+      backgroundmaker2 1_60: 1881896984
+      backgroundmaker2 1_61: -347529611
+      backgroundmaker2 1_62: 1161604488
+      backgroundmaker2 1_63: -627518658
+      backgroundmaker2 1_64: -1554139266
+      backgroundmaker2 1_65: 1545099232
+      backgroundmaker2 1_66: -529427231
+      backgroundmaker2 1_67: 1317564094
+      backgroundmaker2 1_68: -2132300507
+      backgroundmaker2 1_69: 266256106
+      backgroundmaker2 1_7: 93289597
+      backgroundmaker2 1_70: -337531631
+      backgroundmaker2 1_71: 1647449047
+      backgroundmaker2 1_72: -737604443
+      backgroundmaker2 1_73: 1373181235
+      backgroundmaker2 1_74: -2082539229
+      backgroundmaker2 1_75: 1910967998
+      backgroundmaker2 1_76: 1814498932
+      backgroundmaker2 1_77: -459007628
+      backgroundmaker2 1_78: 237740408
+      backgroundmaker2 1_79: -1488910240
+      backgroundmaker2 1_8: -271748571
+      backgroundmaker2 1_80: 837654667
+      backgroundmaker2 1_81: 677209259
+      backgroundmaker2 1_82: 1065278665
+      backgroundmaker2 1_83: -1987403540
+      backgroundmaker2 1_84: -762132587
+      backgroundmaker2 1_85: -1874046155
+      backgroundmaker2 1_86: 1342063974
+      backgroundmaker2 1_87: -1076202554
+      backgroundmaker2 1_88: 452054065
+      backgroundmaker2 1_89: -1504233310
+      backgroundmaker2 1_9: 1761478169
+      backgroundmaker2 1_90: -264085189
+      backgroundmaker2 1_91: -1646392748
+      backgroundmaker2 1_92: -1491830235
+      backgroundmaker2 1_93: -1969670714
+      backgroundmaker2 1_94: 540028916
+      backgroundmaker2 1_95: 2075626983
+      backgroundmaker2 1_96: 783426751
+      backgroundmaker2 1_97: 1914205805
+      backgroundmaker2 1_98: 95382484
+      backgroundmaker2 1_99: -1489731607
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

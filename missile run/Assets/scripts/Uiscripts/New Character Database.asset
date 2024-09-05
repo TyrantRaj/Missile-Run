@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c5c395c2d82a04abc1ba900afab9ef, type: 3}
+  m_Name: New Character Database
+  m_EditorClassIdentifier: 
+  character:
+  - characterSprite: {fileID: 1680733134, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: Boeing
+    Player_collider2D: {fileID: 6681449263066421367, guid: ee3fe90b7bc557344a4dcc5089eda9cb, type: 3}
+  - characterSprite: {fileID: 746308618, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: Dassault Rafale
+    Player_collider2D: {fileID: 7760928742830146361, guid: a996074d5dd2dc745a8375f3c5cd51d4, type: 3}
+  - characterSprite: {fileID: 691494464, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: Special Jaguar
+    Player_collider2D: {fileID: 5132224427251008195, guid: 1ab2a3f7b0e3b1f41833eb9f90c7df3e, type: 3}
+  - characterSprite: {fileID: -1645540597, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: Grumma F-14
+    Player_collider2D: {fileID: 4408829851093704607, guid: 25c2cc2c4f022bf409c58e18753ef316, type: 3}
+  - characterSprite: {fileID: -1788937383, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: HAL TAJAR
+    Player_collider2D: {fileID: 1982549944756987533, guid: 81213418d91b7d543ba212fbfad6bc80, type: 3}
+  - characterSprite: {fileID: -1157201889, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: Lockhead
+    Player_collider2D: {fileID: 5263727522560254949, guid: 08a3978eeb2fd744799149ea77ca6247, type: 3}
+  - characterSprite: {fileID: -904738920, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: McDonnell Douglas
+    Player_collider2D: {fileID: 6558730496601142749, guid: e1e251770e5a11e44bd8590fe8fd3375, type: 3}
+  - characterSprite: {fileID: 2015569589, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: Mikoyan MIG-29
+    Player_collider2D: {fileID: 1616497321432180672, guid: fd10bdecf6258334ebe5dd7666e77937, type: 3}
+  - characterSprite: {fileID: 1270580697, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: miragemig
+    Player_collider2D: {fileID: 4468098702715755949, guid: 0d932fb0c3c9f1a429349157e0dddd76, type: 3}
+  - characterSprite: {fileID: 1729462994, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: saab JAS
+    Player_collider2D: {fileID: 8393063078177229359, guid: f5620a10b7af3964eba71b5d2cc70a46, type: 3}
+  - characterSprite: {fileID: 1270580697, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: miragemig
+    Player_collider2D: {fileID: 4468098702715755949, guid: 0d932fb0c3c9f1a429349157e0dddd76, type: 3}
+  - characterSprite: {fileID: -1129097517, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    characterName: TyrantRaj
+    Player_collider2D: {fileID: 4039798795194153452, guid: 70542d5697845164d8b81afa47d28d6e, type: 3}
