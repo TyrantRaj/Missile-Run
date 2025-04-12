@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-//using UnityEngine.InputSystem;
 using UnityEngine;
-using Unity.VisualScripting;
 
 
 
@@ -22,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public bool play_right_PS = false;
     [SerializeField] public bool play_left_PS = false;
  
-
-    private float horizontalMove;
     private bool moveRight;
     private bool moveLeft;
 
@@ -74,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
     public void pointerDownLeft()
     {
         moveLeft = true;
-        Debug.Log("working");
     }
 
     public void pointerUpLeft()
@@ -97,19 +92,48 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveLeft)
         {
-            transform.Rotate(new Vector3(0, 0, 1) * right_rotate_speed, Space.World);
+            float adjustedSpeed = right_rotate_speed;
+
+            if (Damaged && (Damage_Side == 0 || both_Damaged))
+            {
+                adjustedSpeed *= 0.5f; // reduce speed by 50% on damaged side
+            }
+
+            transform.Rotate(new Vector3(0, 0, 1) * adjustedSpeed, Space.World);
         }
         else if (moveRight)
         {
-            transform.Rotate(new Vector3(0, 0, -1) * left_rotate_speed, Space.World);
+            float adjustedSpeed = left_rotate_speed;
+
+            if (Damaged && (Damage_Side == 1 || both_Damaged))
+            {
+                adjustedSpeed *= 0.5f; // reduce speed by 50% on damaged side
+            }
+
+            transform.Rotate(new Vector3(0, 0, -1) * adjustedSpeed, Space.World);
+        }
+
+
+        float bendAmount = 0.1f;
+
+        if (moveLeft)
+        {
+            transform.localScale = new Vector3(1f - bendAmount, 1f + bendAmount * 0.5f, 1f); // Lean left
+        }
+        else if (moveRight)
+        {
+            transform.localScale = new Vector3(1f - bendAmount, 1f - bendAmount * 0.5f, 1f); // Lean right (inverted squish)
         }
         else
         {
-            transform.Rotate(new Vector3(0, 0, 0) , Space.World);
+            transform.localScale = Vector3.one; // Reset when not turning
         }
+
+
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "SP")
         {
@@ -120,7 +144,22 @@ public class PlayerMovement : MonoBehaviour
                 spawnSP();
             }
         }
+    }*/
+
+    public void Repair()
+    {
+        // Restore full movement speed
+        Damaged = false;
+        both_Damaged = false;
+
+        // Reset visual effects if needed
+        if (!RightPS.isPlaying) RightPS.Play();
+        if (!LeftPS.isPlaying) LeftPS.Play();
+
+        // You can also add any visual/audio feedback for repair here
+        Debug.Log("Player Repaired!");
     }
+
 
     public IEnumerator spawnSpecialPower(float Time_Gap, GameObject SP)
     {

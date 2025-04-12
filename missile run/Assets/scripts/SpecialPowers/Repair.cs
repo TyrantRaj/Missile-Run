@@ -2,22 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlowMotion : MonoBehaviour
+public class Repair : MonoBehaviour
 {
-
-    private float time = 0.5f;
-    // Start is called before the first frame update
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.tag == "Player")
         {
-            gameObject.SetActive(false);
-            Time.timeScale = 0.1f;
-            Time.fixedDeltaTime = Time.timeScale * 0.02f;
-            Invoke("SlowMotion_reset", time);
+            collision.gameObject.GetComponent<PlayerMovement>().Repair();
+            Destroy(gameObject);
         }
         else if (collision.tag == "Missile")
         {
@@ -27,12 +20,5 @@ public class SlowMotion : MonoBehaviour
             Destroy(collision.gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
             Destroy(gameObject);
         }
-    }
-
-    private void SlowMotion_reset() {
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = Time.timeScale * 0.02f;
-        
-        Destroy(gameObject);
     }
 }

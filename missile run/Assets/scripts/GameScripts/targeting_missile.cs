@@ -56,37 +56,26 @@ public class targeting_missile : MonoBehaviour
 
         if(collision.tag == "Player") {
             Damage_Player();
+            Explode();
 
-            //anim.Play("Explosion");
-            GameObject gameObject = Instantiate(Blast_ps, transform.position, Quaternion.identity);
-            //Blast_ps.Play();
-            //Destroy(gameObject);
-            //Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
         }
         else if(collision.tag == "Missile")
         {
-            GameObject gameObject = Instantiate(Blast_ps, transform.position, Quaternion.identity);
-
-            //Blast_ps.Play();
-            //Destroy(gameObject);
-            //anim.Play("Explosion");
-            //Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
+            Explode();
         }
         else if(collision.tag == "Border")
         {
-            GameObject gameObject = Instantiate(Blast_ps, transform.position, Quaternion.identity);
 
-            //Blast_ps.Play();
-            //Destroy(gameObject);
-            //anim.Play("Explosion");
-            //Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
+
+            Explode();
+            
         }
         else if (collision.tag == "SP")
         {
-            spawnsp.CURRENT_SP -= 1;
-            //gameObject.SetActive(false);
-            //spawnSP();
-            //Invoke("Destroy_Go", 12);
+            //spawnsp.CURRENT_SP -= 1;
+            gameObject.SetActive(false);
+            spawnSP();
+            Invoke("Destroy_Go", 12);
         }
 
     }
@@ -118,7 +107,9 @@ public class targeting_missile : MonoBehaviour
         }
         else
         {
-            playerMovement.Damage_Side = UnityEngine.Random.Range(0, 1);
+            playerMovement.Damage_Side = UnityEngine.Random.Range(0, 2); // 0 or 1
+
+            
             if(playerMovement.Damage_Side == 0)
             {
                 playerMovement.play_left_PS = true;
@@ -151,6 +142,19 @@ public class targeting_missile : MonoBehaviour
         int rand = Random.Range(0, SP_gameObjects.Length);
         StartCoroutine(spawnSpecialPower(Time_Gap, SP_gameObjects[rand]));
     }
+
+    void Explode()
+    {
+        FindObjectOfType<MissileIndicatorManager>().RemoveMissile(gameObject);
+
+        GameObject blast = Instantiate(Blast_ps, transform.position, Quaternion.identity);
+        anim.Play("Explosion");
+
+        Destroy(blast, 1f); // Destroy explosion VFX
+        Destroy(gameObject, 0.5f); // Destroy missile itself shortly after
+    }
+
+
 
     void Destroy_Go()
     {

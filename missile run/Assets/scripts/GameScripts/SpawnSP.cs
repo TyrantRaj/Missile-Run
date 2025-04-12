@@ -4,32 +4,56 @@ using UnityEngine;
 
 public class SpawnSP : MonoBehaviour
 {
+    [SerializeField] GameObject indicatorPrefab;
+    [SerializeField] Canvas canvas;
     [SerializeField] GameObject[] sp;
-    public float CURRENT_SP;
-    private float Time_Gap = 10f;
 
-    void Update()
+    private List<GameObject> activeSPs = new List<GameObject>();
+    private float timeGap = 10f;
+
+    void Start()
     {
-        if (CURRENT_SP <= 3)
+        StartCoroutine(SpawnLoop());
+    }
+
+    IEnumerator SpawnLoop()
+    {
+        while (true)
         {
-            CURRENT_SP += 1;
-            spawnSP();
+            yield return new WaitForSeconds(timeGap);
+
+            // Clean up nulls (destroyed SPs)
+            activeSPs.RemoveAll(sp => sp == null);
+
+            if (activeSPs.Count < 3)
+            {
+                SpawnSPWithIndicator();
+            }
         }
     }
 
-    public void spawnSP()
+    void SpawnSPWithIndicator()
     {
         int rand = Random.Range(0, sp.Length);
-        StartCoroutine(spawnSpecialPower(Time_Gap, sp[rand]));
-    }
-
-    public IEnumerator spawnSpecialPower(float Time_Gap, GameObject SP)
-    {
-        yield return new WaitForSeconds(Time_Gap);
-
         Vector3 whereToSpawn = new Vector3(Random.Range(-80f, 80f), Random.Range(-110f, 110f));
+        GameObject newSpecialPower = Instantiate(sp[rand], whereToSpawn, Quaternion.identity);
 
-        GameObject newSpecialPower = Instantiate(SP, whereToSpawn, Quaternion.identity);
+        // Track the new SP
+        activeSPs.Add(newSpecialPower);
 
+        // Get the SPInfo component from the SP (holds custom sprite)
+        SPInfo spInfo = newSpecialPower.GetComponent<SPInfo>();
+
+        // Create the indicator
+        GameObject newIndicator = Instantiate(indicatorPrefab, canvas.transform);
+        SPIndicator indicatorScript = newIndicator.GetComponent<SPIndicator>();
+        indicatorScript.target = newSpecialPower.transform;
+        indicatorScript.canvasRect = canvas.GetComponent<RectTransform>();
+
+        // Set custom sprite if available
+        if (spInfo != null && spInfo.indicatorSprite != null)
+        {
+            indicatorScript.indicatorImage.sprite = spInfo.indicatorSprite;
+        }
     }
 }
