@@ -4,35 +4,55 @@ using UnityEngine;
 
 public class AllMissileBoom : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
-            GameObject[] go = GameObject.FindGameObjectsWithTag("Missile");
-            foreach (GameObject g in go)
-                dest(g);
+            GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
+            foreach (GameObject missile in missiles)
+            {
+                HandleMissileExplosion(missile);
+            }
 
             Destroy(gameObject);
         }
-        else if (collision.tag == "Missile")
+        else if (collision.CompareTag("Missile"))
         {
-            Animator animator = collision.GetComponent<Animator>();
-            animator.Play("Explosion");
-
-            Destroy(collision.gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
+            HandleMissileExplosion(collision.gameObject);
             Destroy(gameObject);
         }
     }
 
-    void dest(GameObject gameobj)
+    void HandleMissileExplosion(GameObject missile)
     {
-        targeting_missile player_script = gameobj.GetComponent<targeting_missile>();    
-        player_script.missile_speed = 0;
-        player_script.rotate_speed = 0;
-        Animator animator = gameobj.GetComponent<Animator>();
-        animator.Play("Explosion");
-        Destroy(gameobj, animator.GetCurrentAnimatorStateInfo(0).length);
+        // Stop movement (if any)
+        if (missile.TryGetComponent<targeting_missile>(out var targeting))
+        {
+            targeting.missile_speed = 0;
+            targeting.rotate_speed = 0;
+        }
+        else if (missile.TryGetComponent<WaveMissile>(out var wave))
+        {
+            wave.missile_speed = 0;
+            wave.enabled = false; // Disable movement script
+        }
+        
+
+        // Trigger animation if available
+        if (missile.TryGetComponent<Animator>(out var anim))
+        {
+            anim.Play("Explosion");
+            Destroy(missile, anim.GetCurrentAnimatorStateInfo(0).length);
+        }
+        else
+        {
+            Destroy(missile);
+        }
+
+        // Optional: Remove from indicator system
+        if (FindObjectOfType<MissileIndicatorManager>() is { } indicatorMgr)
+        {
+            indicatorMgr.RemoveMissile(missile);
+        }
     }
 }

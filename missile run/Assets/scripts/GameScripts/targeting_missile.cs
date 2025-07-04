@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class targeting_missile : MonoBehaviour
 {
-    [SerializeField] GameObject Blast_ps;
+    
+
+    //[SerializeField] GameObject Blast_ps;
     [SerializeField] float Time_Gap = 10f;
     public GameObject[] SP_gameObjects;
 
@@ -34,7 +36,7 @@ public class targeting_missile : MonoBehaviour
         playerMovement = player.GetComponent<PlayerMovement>();
 
         missile_rb = GetComponent<Rigidbody2D>();
-        missile_speed = Random.Range(6,8);
+        missile_speed = Random.Range(6, 8);
         playerMovement.RightPS.Pause();
         playerMovement.LeftPS.Pause();
     }
@@ -46,7 +48,7 @@ public class targeting_missile : MonoBehaviour
         Vector2 direction = (target.position - transform.position).normalized;
         float rotate_amount = Vector3.Cross(transform.up, direction).z;
         missile_rb.angularVelocity = rotate_amount * rotate_speed;
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,21 +56,22 @@ public class targeting_missile : MonoBehaviour
         missile_speed = 0;
         rotate_speed = 0;
 
-        if(collision.tag == "Player") {
+        if (collision.tag == "Player")
+        {
             Damage_Player();
             Explode();
 
         }
-        else if(collision.tag == "Missile")
+        else if (collision.tag == "Missile")
         {
             Explode();
         }
-        else if(collision.tag == "Border")
+        else if (collision.tag == "Border")
         {
 
 
             Explode();
-            
+
         }
         else if (collision.tag == "SP")
         {
@@ -83,6 +86,8 @@ public class targeting_missile : MonoBehaviour
 
     private void Damage_Player()
     {
+        if(playerMovement.isGod) { return; }
+
         //0 means left side damage
         //1 means right side damage
         if (playerMovement.both_Damaged)
@@ -98,7 +103,8 @@ public class targeting_missile : MonoBehaviour
                 playerMovement.RightTR.enabled = false;
                 playerMovement.both_Damaged = true;
 
-            }else if(playerMovement.Damage_Side == 1)
+            }
+            else if (playerMovement.Damage_Side == 1)
             {
                 playerMovement.play_left_PS = true;
                 playerMovement.LeftTR.enabled = false;
@@ -109,12 +115,14 @@ public class targeting_missile : MonoBehaviour
         {
             playerMovement.Damage_Side = UnityEngine.Random.Range(0, 2); // 0 or 1
 
-            
-            if(playerMovement.Damage_Side == 0)
+
+            if (playerMovement.Damage_Side == 0)
             {
                 playerMovement.play_left_PS = true;
                 playerMovement.LeftTR.enabled = false;
-            }else {
+            }
+            else
+            {
                 playerMovement.play_right_PS = true;
                 playerMovement.RightTR.enabled = false;
             }
@@ -147,10 +155,10 @@ public class targeting_missile : MonoBehaviour
     {
         FindObjectOfType<MissileIndicatorManager>().RemoveMissile(gameObject);
 
-        GameObject blast = Instantiate(Blast_ps, transform.position, Quaternion.identity);
+        //GameObject blast = Instantiate(Blast_ps, transform.position, Quaternion.identity);
         anim.Play("Explosion");
 
-        Destroy(blast, 1f); // Destroy explosion VFX
+       // Destroy(blast, 1f); // Destroy explosion VFX
         Destroy(gameObject, 0.5f); // Destroy missile itself shortly after
     }
 

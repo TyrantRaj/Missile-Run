@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 
 {
+    public bool isGod = false;
     private SpawnSP spawnsp;
     private GameObject enemySpawn;
 
@@ -51,21 +52,37 @@ public class PlayerMovement : MonoBehaviour
         PS_Controller();
     }
 
+    void Stop_Ps_Play()
+    {
+        RightTR.enabled = true;
+        LeftTR.enabled = true;
+        play_left_PS = false ;
+        play_right_PS = false;
+        RightPS.Stop();
+        LeftPS.Stop();
+    }
+
     void PS_Controller()
     {
-        if (play_right_PS && play_left_PS)
+        if (play_right_PS && !RightPS.isPlaying)
         {
             RightPS.Play();
+        }
+        else if (!play_right_PS && RightPS.isPlaying)
+        {
+            RightPS.Stop();
+        }
+
+        if (play_left_PS && !LeftPS.isPlaying)
+        {
             LeftPS.Play();
         }
-        if (play_right_PS)
+        else if (!play_left_PS && LeftPS.isPlaying)
         {
-            RightPS.Play();
-        } else if (play_left_PS)
-        {
-            LeftPS.Play();
+            LeftPS.Stop();
         }
     }
+
 
     public void pointerDownLeft()
     {
@@ -133,28 +150,13 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "SP")
-        {
-            spawnsp.CURRENT_SP -= 1;
-            if (spawnsp.CURRENT_SP <= 3)
-            {
-                spawnsp.CURRENT_SP += 1;
-                spawnSP();
-            }
-        }
-    }*/
-
     public void Repair()
     {
         // Restore full movement speed
         Damaged = false;
         both_Damaged = false;
-
-        // Reset visual effects if needed
-        if (!RightPS.isPlaying) RightPS.Play();
-        if (!LeftPS.isPlaying) LeftPS.Play();
+        
+        Stop_Ps_Play();
 
         // You can also add any visual/audio feedback for repair here
         Debug.Log("Player Repaired!");

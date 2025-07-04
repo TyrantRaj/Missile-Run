@@ -1,37 +1,64 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SPIndicator : MonoBehaviour
 {
-    public Transform target; // The SP object
+    public Transform target;
     public RectTransform canvasRect;
     public Image indicatorImage;
+    public TextMeshProUGUI distanceText;
+
+    private Transform player;
+    private RectTransform rect;
+    public Camera cam;
+
+    private float screenPadding = 50f;
+
+    void Start()
+    {
+        rect = GetComponent<RectTransform>();
+        cam = Camera.main;
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
+    }
 
     void Update()
     {
-        if (target == null)
+        if (target == null || player == null || cam == null)
         {
-            Destroy(gameObject); // Clean up if target is gone
+            Destroy(gameObject);
             return;
         }
 
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(target.position);
+        Vector3 screenPos = cam.WorldToScreenPoint(target.position);
 
-        // Check if off-screen
-        if (screenPos.z > 0 && (screenPos.x < 0 || screenPos.x > Screen.width || screenPos.y < 0 || screenPos.y > Screen.height))
+        // Check if SP is visible on-screen
+        bool isVisible = screenPos.z > 0 &&
+                         screenPos.x >= 0 && screenPos.x <= Screen.width &&
+                         screenPos.y >= 0 && screenPos.y <= Screen.height;
+
+        // Toggle visibility
+        gameObject.SetActive(!isVisible);
+
+        if (!isVisible)
         {
-            indicatorImage.enabled = true;
+            // Clamp indicator within screen bounds
+            float halfWidth = rect.rect.width / 2f;
+            float halfHeight = rect.rect.height / 2f;
 
-            // Clamp to screen edges
-            screenPos.x = Mathf.Clamp(screenPos.x, 50f, Screen.width - 50f);
-            screenPos.y = Mathf.Clamp(screenPos.y, 50f, Screen.height - 50f);
+            screenPos.x = Mathf.Clamp(screenPos.x, screenPadding + halfWidth, Screen.width - screenPadding - halfWidth);
+            screenPos.y = Mathf.Clamp(screenPos.y, screenPadding + halfHeight, Screen.height - screenPadding - halfHeight);
 
-            transform.position = screenPos;
-        }
-        else
-        {
-            // On screen, hide indicator
-            indicatorImage.enabled = false;
+            rect.position = screenPos;
+
+            // Update distance
+            float dist = Vector2.Distance(player.position, target.position);
+            distanceText.text = Mathf.RoundToInt(dist) + "m";
         }
     }
 }

@@ -880,7 +880,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -900,10 +906,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 5200e165-bc6a-49ab-a735-c2a8e1334277
+  cloudProjectId: 58121eaa-6032-4db8-b675-67a5acfe4790
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: missile run (1)
+  projectName: missile run
   organizationId: tyrantraj
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

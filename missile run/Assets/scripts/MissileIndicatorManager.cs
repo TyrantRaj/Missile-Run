@@ -55,20 +55,6 @@ public class MissileIndicatorManager : MonoBehaviour
                 float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                 //indicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
             }
-
-
-            /*if (isOffscreen)
-            {
-                // Clamp the position to screen edges
-                screenPos.x = Mathf.Clamp(screenPos.x, 50, Screen.width - 50);
-                screenPos.y = Mathf.Clamp(screenPos.y, 50, Screen.height - 50);
-
-                indicator.transform.position = screenPos;
-
-                Vector3 dir = missile.transform.position - cam.transform.position;
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                //indicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90 );
-            }*/
         }
 
         // Clean up null missiles
@@ -77,7 +63,7 @@ public class MissileIndicatorManager : MonoBehaviour
             missileIndicators.Remove(m);
         }
     }
-
+/*
     public void AddMissile(GameObject missile)
     {
         if (!missileIndicators.ContainsKey(missile))
@@ -85,7 +71,18 @@ public class MissileIndicatorManager : MonoBehaviour
             GameObject indicator = Instantiate(indicatorPrefab, canvasRect);
             missileIndicators.Add(missile, indicator);
         }
+    }*/
+
+    public void AddMissile(GameObject missile)
+    {
+        if (!missileIndicators.ContainsKey(missile))
+        {
+            GameObject indicator = Instantiate(indicatorPrefab, canvasRect);
+            indicator.SetActive(false); // Disable it initially to avoid flash
+            missileIndicators.Add(missile, indicator);
+        }
     }
+
 
     public void RemoveMissile(GameObject missile)
     {

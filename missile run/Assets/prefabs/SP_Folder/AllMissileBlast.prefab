@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6407584805584134864}
   - component: {fileID: -2448560665835876946}
   - component: {fileID: 116644865576724859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AllMissileBlast
   m_TagString: SP
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: 4b955c0b758a2624d909e68a6129bc4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2432a94f99e43e4d81564b01147b024, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,4 +174,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6883108ba9fa0964cb2c476a8a786156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicatorSprite: {fileID: 21300000, guid: 4b955c0b758a2624d909e68a6129bc4e, type: 3}
+  indicatorSprite: {fileID: 21300000, guid: d2432a94f99e43e4d81564b01147b024, type: 3}

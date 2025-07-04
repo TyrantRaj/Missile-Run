@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 324123571705881908}
   - component: {fileID: 136742146990624398}
   - component: {fileID: 462445641994854031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Repair
   m_TagString: SP
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: 99000f86d0092d8468c0671db568adc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec6be9e7d4ee21a4abd6eea759f9c90f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6883108ba9fa0964cb2c476a8a786156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicatorSprite: {fileID: 21300000, guid: 99000f86d0092d8468c0671db568adc6, type: 3}
+  indicatorSprite: {fileID: 21300000, guid: ec6be9e7d4ee21a4abd6eea759f9c90f, type: 3}
 --- !u!114 &462445641994854031
 MonoBehaviour:
   m_ObjectHideFlags: 0

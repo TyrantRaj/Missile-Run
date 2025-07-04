@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5647207547150680051}
   - component: {fileID: 8699247577090657889}
   - component: {fileID: 1290603015431204231}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SlowMotion
   m_TagString: SP
   m_Icon: {fileID: 0}

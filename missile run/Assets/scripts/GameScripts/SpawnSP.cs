@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SpawnSP : MonoBehaviour
 {
-    [SerializeField] GameObject indicatorPrefab;
-    [SerializeField] Canvas canvas;
-    [SerializeField] GameObject[] sp;
+    [SerializeField] private GameObject indicatorPrefab;
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private GameObject[] sp;
+    private Transform playerPos;
 
     private List<GameObject> activeSPs = new List<GameObject>();
     private float timeGap = 10f;
 
     void Start()
     {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(SpawnLoop());
     }
 
@@ -22,9 +25,10 @@ public class SpawnSP : MonoBehaviour
         {
             yield return new WaitForSeconds(timeGap);
 
-            // Clean up nulls (destroyed SPs)
+            // Clean up destroyed SPs
             activeSPs.RemoveAll(sp => sp == null);
 
+            // Spawn new SP if less than 3 are active
             if (activeSPs.Count < 3)
             {
                 SpawnSPWithIndicator();
@@ -35,25 +39,39 @@ public class SpawnSP : MonoBehaviour
     void SpawnSPWithIndicator()
     {
         int rand = Random.Range(0, sp.Length);
-        Vector3 whereToSpawn = new Vector3(Random.Range(-80f, 80f), Random.Range(-110f, 110f));
-        GameObject newSpecialPower = Instantiate(sp[rand], whereToSpawn, Quaternion.identity);
 
-        // Track the new SP
+        Vector3 whereToSpawn = new Vector3(
+            playerPos.position.x + Random.Range(-100f, 100f),
+            playerPos.position.y + Random.Range(-100f, 100f),
+            0f
+        );
+
+        GameObject newSpecialPower = Instantiate(sp[rand], whereToSpawn, Quaternion.identity);
         activeSPs.Add(newSpecialPower);
 
-        // Get the SPInfo component from the SP (holds custom sprite)
         SPInfo spInfo = newSpecialPower.GetComponent<SPInfo>();
 
-        // Create the indicator
-        GameObject newIndicator = Instantiate(indicatorPrefab, canvas.transform);
-        SPIndicator indicatorScript = newIndicator.GetComponent<SPIndicator>();
-        indicatorScript.target = newSpecialPower.transform;
-        indicatorScript.canvasRect = canvas.GetComponent<RectTransform>();
+        StartCoroutine(SetupIndicator(newSpecialPower, spInfo));
+    }
 
-        // Set custom sprite if available
+    IEnumerator SetupIndicator(GameObject spObject, SPInfo spInfo)
+    {
+        yield return null; // Wait one frame so SP position is initialized
+
+        GameObject indicator = Instantiate(indicatorPrefab, canvas.transform);
+        SPIndicator script = indicator.GetComponent<SPIndicator>();
+
+        script.target = spObject.transform;
+        script.canvasRect = canvas.GetComponent<RectTransform>();
+        script.cam = Camera.main;
+        script.distanceText = indicator.GetComponentInChildren<TextMeshProUGUI>();
+
         if (spInfo != null && spInfo.indicatorSprite != null)
         {
-            indicatorScript.indicatorImage.sprite = spInfo.indicatorSprite;
+            script.indicatorImage.sprite = spInfo.indicatorSprite;
         }
+
+        yield return new WaitForSeconds(0.5f);
+        indicator.SetActive(true);
     }
 }
