@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
         Vector3 spawnPosition = playerTransform.position + offset;
 
         GameObject missile = Instantiate(homingMissilePrefab, spawnPosition, Quaternion.identity);
-        FindObjectOfType<MissileIndicatorManager>()?.AddMissile(missile);
+        FindObjectOfType<IndicatorManager>()?.AddTarget(missile, false);
 
         StartCoroutine(SpawnHomingMissiles());
     }
@@ -53,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
         waveMissile.GetComponent<WaveMissile>().SetDirection((playerTransform.position - spawnPosition).normalized);
 
         // Register with indicator system
-        FindObjectOfType<MissileIndicatorManager>()?.AddMissile(waveMissile);
+        FindObjectOfType<IndicatorManager>()?.AddTarget(waveMissile);
 
         StartCoroutine(SpawnWaveMissiles());
     }

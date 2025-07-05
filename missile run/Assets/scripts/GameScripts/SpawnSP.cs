@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class SpawnSP : MonoBehaviour
 {
-    [SerializeField] private GameObject indicatorPrefab;
-    [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject[] sp;
     private Transform playerPos;
 
@@ -49,29 +46,8 @@ public class SpawnSP : MonoBehaviour
         GameObject newSpecialPower = Instantiate(sp[rand], whereToSpawn, Quaternion.identity);
         activeSPs.Add(newSpecialPower);
 
-        SPInfo spInfo = newSpecialPower.GetComponent<SPInfo>();
-
-        StartCoroutine(SetupIndicator(newSpecialPower, spInfo));
-    }
-
-    IEnumerator SetupIndicator(GameObject spObject, SPInfo spInfo)
-    {
-        yield return null; // Wait one frame so SP position is initialized
-
-        GameObject indicator = Instantiate(indicatorPrefab, canvas.transform);
-        SPIndicator script = indicator.GetComponent<SPIndicator>();
-
-        script.target = spObject.transform;
-        script.canvasRect = canvas.GetComponent<RectTransform>();
-        script.cam = Camera.main;
-        script.distanceText = indicator.GetComponentInChildren<TextMeshProUGUI>();
-
-        if (spInfo != null && spInfo.indicatorSprite != null)
-        {
-            script.indicatorImage.sprite = spInfo.indicatorSprite;
-        }
-
-        yield return new WaitForSeconds(0.5f);
-        indicator.SetActive(true);
+        // Register with IndicatorManager (same as missile)
+        FindObjectOfType<IndicatorManager>()?.AddTarget(newSpecialPower,true);
+        
     }
 }

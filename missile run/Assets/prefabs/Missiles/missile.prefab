@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1854038911241369548}
   - component: {fileID: 3291291320681731466}
   - component: {fileID: 7628500631704714277}
-  - component: {fileID: -9042711727380593253}
   m_Layer: 7
   m_Name: missile
   m_TagString: Missile
@@ -321,15 +320,3 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &-9042711727380593253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103261446625188700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23fca1fdea793447887c01902b9cc32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

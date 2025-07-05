@@ -5,6 +5,7 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField]public GameObject scorePopupPrefab;
     [SerializeField] public RectTransform scoreTextTransform;
+    [SerializeField] public RectTransform canvasTransform;
 
 
     public static ScoreManager Instance;
@@ -58,14 +59,13 @@ public class ScoreManager : MonoBehaviour
         isRunning = false;
     }
 
-    public void AddScore(int amount)
+    public void AddScore(int amount, Vector3 worldPos)
     {
         score += amount;
         UpdateUI();
 
-        // Instantiate popup just below the score text
-        GameObject popup = Instantiate(scorePopupPrefab, scoreTextTransform.parent);
-        popup.transform.localPosition = scoreTextTransform.localPosition + new Vector3(0, -40f, 0);
+        // Spawn in world space
+        GameObject popup = Instantiate(scorePopupPrefab, worldPos, Quaternion.identity);
         popup.GetComponent<ScorePopup>().SetText("+" + amount);
     }
 

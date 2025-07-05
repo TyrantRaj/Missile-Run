@@ -61,9 +61,14 @@ public class WaveMissile : MonoBehaviour
         }
         else if (collision.CompareTag("Missile"))
         {
-            ScoreManager.Instance?.AddScore(100);
+            Vector3 explosionPos = collision.transform.position;
+            ScoreManager.Instance?.AddScore(100, transform.position);
+
+
+
             Explode();
         }
+
         else if (collision.CompareTag("SP"))
         {
             //spawnsp.CURRENT_SP -= 1;
@@ -122,7 +127,7 @@ public class WaveMissile : MonoBehaviour
 
     private void Explode()
     {
-        FindObjectOfType<MissileIndicatorManager>()?.RemoveMissile(gameObject);
+        FindObjectOfType<IndicatorManager>()?.RemoveTarget(gameObject);
 
        // GameObject blast = Instantiate(Blast_ps, transform.position, Quaternion.identity);
         anim.Play("Explosion");

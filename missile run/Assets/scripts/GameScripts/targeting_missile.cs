@@ -64,6 +64,9 @@ public class targeting_missile : MonoBehaviour
         }
         else if (collision.tag == "Missile")
         {
+            Vector3 explosionPos = collision.transform.position;
+            ScoreManager.Instance?.AddScore(100, transform.position);
+
             Explode();
         }
         else if (collision.tag == "Border")
@@ -153,7 +156,7 @@ public class targeting_missile : MonoBehaviour
 
     void Explode()
     {
-        FindObjectOfType<MissileIndicatorManager>().RemoveMissile(gameObject);
+        FindObjectOfType<IndicatorManager>().RemoveTarget(gameObject);
 
         //GameObject blast = Instantiate(Blast_ps, transform.position, Quaternion.identity);
         anim.Play("Explosion");

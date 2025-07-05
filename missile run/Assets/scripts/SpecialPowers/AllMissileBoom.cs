@@ -50,9 +50,9 @@ public class AllMissileBoom : MonoBehaviour
         }
 
         // Optional: Remove from indicator system
-        if (FindObjectOfType<MissileIndicatorManager>() is { } indicatorMgr)
+        if (FindObjectOfType<IndicatorManager>() is { } indicatorMgr)
         {
-            indicatorMgr.RemoveMissile(missile);
+            indicatorMgr.RemoveTarget(missile);
         }
     }
 }
