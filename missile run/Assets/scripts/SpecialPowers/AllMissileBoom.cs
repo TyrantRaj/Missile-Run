@@ -36,7 +36,13 @@ public class AllMissileBoom : MonoBehaviour
             wave.missile_speed = 0;
             wave.enabled = false; // Disable movement script
         }
-        
+        else if (missile.TryGetComponent<OneHitMissile>(out var oneHit))
+        {
+            oneHit.missile_speed = 0;
+            oneHit.rotate_speed = 0;
+            oneHit.enabled = false; // Disable movement script
+        }
+
 
         // Trigger animation if available
         if (missile.TryGetComponent<Animator>(out var anim))

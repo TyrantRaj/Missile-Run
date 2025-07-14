@@ -7,6 +7,7 @@ public class SceneChanger : MonoBehaviour
 {
     public void LoadScene(string scenename)
     {
+        SoundManager.PlaySound(SoundManager.Sound.ButtonClick);
         SceneManager.LoadScene(scenename);
     }
 

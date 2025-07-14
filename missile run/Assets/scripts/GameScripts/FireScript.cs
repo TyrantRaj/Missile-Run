@@ -17,7 +17,7 @@ public class FireScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        bullet_rb.velocity = transform.up * bullet_speed;
+        bullet_rb.linearVelocity = transform.up * bullet_speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

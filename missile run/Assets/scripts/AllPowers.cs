@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,22 +8,33 @@ public class AllPowers : MonoBehaviour
     [SerializeField] Sprite OrdinarySprite;
     [SerializeField] Sprite duringReduceSprite;
 
-    private bool isPowerActive = false;
-
     public float slowMoDuration = 5f;
     public Slider progressBar;
 
     public void EnableSlowMotion()
     {
-        //FillImg.sprite = duringReduceSprite;
-        Time.timeScale = 0.3f; // Example: slow motion
+        Time.timeScale = 0.3f;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
+
+        UpdateAllSoundPitch(Time.timeScale);
     }
 
     public void DisableSlowMotion()
     {
-        //FillImg.sprite = OrdinarySprite;
-        Time.timeScale = 1f; // Normal speed
+        Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
+
+        UpdateAllSoundPitch(1f);
+    }
+
+    private void UpdateAllSoundPitch(float newPitch)
+    {
+        GameObject[] soundObjects = GameObject.FindGameObjectsWithTag("Sound");
+        foreach (GameObject soundObj in soundObjects)
+        {
+            AudioSource audio = soundObj.GetComponent<AudioSource>();
+            if (audio != null)
+                audio.pitch = newPitch;
+        }
     }
 }

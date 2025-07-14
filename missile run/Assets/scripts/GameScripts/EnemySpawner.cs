@@ -5,9 +5,11 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject homingMissilePrefab;
     [SerializeField] private GameObject waveMissilePrefab;
+    [SerializeField] private GameObject OneHitMissilePrefab;
     [SerializeField] private GameObject warningIndicatorPrefab;
     [SerializeField] private Transform playerTransform;
 
+    private float oneHitInterval = 10f;
     private float homingInterval = 3.5f;
     private float waveInterval = 2f;
     private float missileSpawnDistance = 30f;
@@ -18,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
         // Start both spawning routines
         StartCoroutine(SpawnHomingMissiles());
         StartCoroutine(SpawnWaveMissiles());
+        StartCoroutine(SpawnOneHitMissile());
     }
 
     // === HOMING MISSILES ===
@@ -33,6 +36,23 @@ public class EnemySpawner : MonoBehaviour
         FindObjectOfType<IndicatorManager>()?.AddTarget(missile, false);
 
         StartCoroutine(SpawnHomingMissiles());
+    }
+
+
+    // === ONEHIT MISSILE === 
+
+    private IEnumerator SpawnOneHitMissile()
+    {
+        yield return new WaitForSeconds(oneHitInterval);
+
+        float angle = Random.Range(0f, 360f);
+        Vector3 offset = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * missileSpawnDistance;
+        Vector3 spawnPosition = playerTransform.position + offset;
+
+        GameObject oneHitMissile = Instantiate(OneHitMissilePrefab, spawnPosition, Quaternion.identity);
+        FindObjectOfType<IndicatorManager>()?.AddTarget(oneHitMissile, false);
+
+        StartCoroutine(SpawnOneHitMissile());
     }
 
     // === STRAIGHT WAVE MISSILES WITH WARNING ===

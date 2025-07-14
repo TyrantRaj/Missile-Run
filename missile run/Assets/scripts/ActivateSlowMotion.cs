@@ -14,14 +14,35 @@ public class ActivateSlowMotion : MonoBehaviour, IPointerDownHandler, IPointerUp
 
     void Update()
     {
-        if (isHolding )
+        // Keyboard spacebar control
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!powerDepleted)
+            {
+                isHolding = true;
+                PowerScript.EnableSlowMotion();
+                Debug.Log("Space down - Slow motion enabled");
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (isHolding)
+            {
+                PowerScript.DisableSlowMotion();
+                Debug.Log("Space released - Slow motion disabled");
+            }
+
+            isHolding = false;
+        }
+
+        if (isHolding)
         {
             slideProgress.value -= depletionRate * Time.unscaledDeltaTime;
 
             if (slideProgress.value <= 0)
             {
                 slideProgress.value = 0;
-                //powerDepleted = true;
                 isHolding = false;
                 PowerScript.DisableSlowMotion();
                 Debug.Log("Power depleted - Slow motion disabled");
@@ -36,11 +57,11 @@ public class ActivateSlowMotion : MonoBehaviour, IPointerDownHandler, IPointerUp
                 if (slideProgress.value >= 1f)
                 {
                     slideProgress.value = 1f;
-                    //powerDepleted = false; // Re-enable usage
                 }
             }
         }
     }
+
 
     public void OnPointerDown(PointerEventData eventData)
     {

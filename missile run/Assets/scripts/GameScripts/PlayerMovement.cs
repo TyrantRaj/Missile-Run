@@ -38,9 +38,11 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource loopingAudio = SoundManager.PlayLoopingSound(SoundManager.Sound.PlaneSound);
+
         enemySpawn = GameObject.FindWithTag("SPspawn");
         spawnsp = enemySpawn.GetComponent<SpawnSP>();
-
+        Application.targetFrameRate = 60;
         moveLeft = false;
         moveRight = false;
     }
@@ -102,53 +104,39 @@ public class PlayerMovement : MonoBehaviour
     {
         moveRight = false;
     }
-    
+
     void Movement()
     {
-        player_rb.velocity = transform.up * speed;
+        player_rb.linearVelocity = transform.up * speed;
 
-        if (moveLeft)
+        bool left = moveLeft || Input.GetKey(KeyCode.A);
+        bool right = moveRight || Input.GetKey(KeyCode.D);
+
+        if (left)
         {
             float adjustedSpeed = right_rotate_speed;
-
             if (Damaged && (Damage_Side == 0 || both_Damaged))
-            {
-                adjustedSpeed *= 0.5f; // reduce speed by 50% on damaged side
-            }
-
+                adjustedSpeed *= 0.5f;
             transform.Rotate(new Vector3(0, 0, 1) * adjustedSpeed, Space.World);
         }
-        else if (moveRight)
+        else if (right)
         {
             float adjustedSpeed = left_rotate_speed;
-
             if (Damaged && (Damage_Side == 1 || both_Damaged))
-            {
-                adjustedSpeed *= 0.5f; // reduce speed by 50% on damaged side
-            }
-
+                adjustedSpeed *= 0.5f;
             transform.Rotate(new Vector3(0, 0, -1) * adjustedSpeed, Space.World);
         }
 
-
         float bendAmount = 0.1f;
 
-        if (moveLeft)
-        {
-            transform.localScale = new Vector3(1f - bendAmount, 1f + bendAmount * 0.5f, 1f); // Lean left
-        }
-        else if (moveRight)
-        {
-            transform.localScale = new Vector3(1f - bendAmount, 1f - bendAmount * 0.5f, 1f); // Lean right (inverted squish)
-        }
+        if (left)
+            transform.localScale = new Vector3(1f - bendAmount, 1f + bendAmount * 0.5f, 1f);
+        else if (right)
+            transform.localScale = new Vector3(1f - bendAmount, 1f - bendAmount * 0.5f, 1f);
         else
-        {
-            transform.localScale = Vector3.one; // Reset when not turning
-        }
-
-
-
+            transform.localScale = Vector3.one;
     }
+
 
     public void Repair()
     {
