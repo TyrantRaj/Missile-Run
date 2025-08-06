@@ -14,6 +14,7 @@ public class Repair : MonoBehaviour
         }
         else if (collision.tag == "Missile")
         {
+            return;
             Animator animator = collision.GetComponent<Animator>();
             animator.Play("Explosion");
 

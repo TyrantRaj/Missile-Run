@@ -18,6 +18,7 @@ public class AllMissileBoom : MonoBehaviour
         }
         else if (collision.CompareTag("Missile"))
         {
+            return;
             HandleMissileExplosion(collision.gameObject);
             Destroy(gameObject);
         }

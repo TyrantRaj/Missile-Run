@@ -6,7 +6,7 @@ public class SpawnSP : MonoBehaviour
 {
     [SerializeField] private GameObject[] sp;
     private Transform playerPos;
-
+    
     private List<GameObject> activeSPs = new List<GameObject>();
     private float timeGap = 10f;
 

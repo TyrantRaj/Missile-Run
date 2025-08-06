@@ -5,8 +5,8 @@ using UnityEngine;
 
 
 public class PlayerMovement : MonoBehaviour
-
 {
+    public SpriteRenderer playerSpriteRenderer;
     public bool isGod = false;
     private SpawnSP spawnsp;
     private GameObject enemySpawn;
@@ -32,20 +32,36 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D player_rb;
     public float speed;
+    public float orginalSpeed;
     public float right_rotate_speed;
     public float left_rotate_speed;
 
-    // Start is called before the first frame update
     void Start()
     {
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
         AudioSource loopingAudio = SoundManager.PlayLoopingSound(SoundManager.Sound.PlaneSound);
+
+        int index = PlayerPrefs.GetInt("SelectedCharacter", 0); // default to 0
+
+        // Ensure stats are always set when starting the game
+        speed = PlayerPrefs.GetFloat("JetSpeed_" + index, 3f); // fallback values
+        orginalSpeed = PlayerPrefs.GetFloat("JetSpeed_" + index, 3f);
+        right_rotate_speed = left_rotate_speed = PlayerPrefs.GetFloat("JetRot_" + index, 2f);
+
+        JetDatabase db = Resources.Load<JetDatabase>("JetDatabase");
+        SelectedJetStats.jetSprite = db.jetSkins[index].sprite;
+
+
+        playerSpriteRenderer.sprite = SelectedJetStats.jetSprite;
 
         enemySpawn = GameObject.FindWithTag("SPspawn");
         spawnsp = enemySpawn.GetComponent<SpawnSP>();
         Application.targetFrameRate = 60;
+
         moveLeft = false;
         moveRight = false;
     }
+
 
     private void FixedUpdate()
     {
@@ -171,5 +187,18 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+
+    public void Die()
+    {
+        SoundManager.PauseAllLoopingSounds();
+        playerSpriteRenderer.enabled = false;
+        LeftPS.gameObject.SetActive(false);
+        RightPS.gameObject.SetActive(false);
+        player_rb.linearVelocity = Vector2.zero;
+        player_rb.angularVelocity = 0f;
+        player_rb.bodyType = RigidbodyType2D.Static;
+
+    }
+
 
 }

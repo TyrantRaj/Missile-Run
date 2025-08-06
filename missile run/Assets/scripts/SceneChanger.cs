@@ -16,4 +16,10 @@ public class SceneChanger : MonoBehaviour
         Debug.Log("Quit Game"); // This will show in Editor
         Application.Quit();     // This works only in a built app
     }
+
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteAll();
+
+    }
 }

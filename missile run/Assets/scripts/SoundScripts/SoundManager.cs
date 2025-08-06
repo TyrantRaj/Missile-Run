@@ -11,7 +11,9 @@ public static class SoundManager
         Explosion,
         CoinPickUp,
         PlaneSound,
-        ButtonClick
+        ButtonClick,
+        Scroll,
+        PowerUp
         // Add more as needed
     }
 
@@ -91,7 +93,7 @@ public static class SoundManager
         foreach (var src in loopingSources)
         {
             if (src != null && src.isPlaying)
-                src.Pause(); // 👈 Pause
+                src.Pause(); 
         }
     }
 
@@ -100,7 +102,7 @@ public static class SoundManager
         foreach (var src in loopingSources)
         {
             if (src != null && !src.isPlaying)
-                src.UnPause(); // 👈 Resume
+                src.UnPause(); 
         }
     }
 

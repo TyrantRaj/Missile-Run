@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class WaveMissile : MonoBehaviour
 {
+    GameOver gameoverscript;
     [SerializeField] GameObject coinPrefab;
     [SerializeField] public float missile_speed = 10f;
     [SerializeField] private Rigidbody2D rb_wave;
@@ -30,6 +31,7 @@ public class WaveMissile : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
+        gameoverscript = GameObject.FindGameObjectWithTag("GameOver").GetComponent<GameOver>();
         Invoke("Destroy_Go", 15f);
         playerMovement.RightPS.Pause();
         playerMovement.LeftPS.Pause();
@@ -116,7 +118,7 @@ public class WaveMissile : MonoBehaviour
 
     private void Restart_Game()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameoverscript.GameOverFunction();
     }
 
     private void Explode()

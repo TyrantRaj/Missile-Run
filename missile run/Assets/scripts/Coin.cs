@@ -37,8 +37,6 @@ public class Coin : MonoBehaviour
 
     void Collect()
     {
-        // TODO: Add coin to currency manager
-        // Example:
         CurrencyManager.instance.AddCoin(1);
 
         // Play sound or animation here if needed

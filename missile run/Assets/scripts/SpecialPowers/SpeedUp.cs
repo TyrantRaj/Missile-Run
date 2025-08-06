@@ -1,20 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpeedUp : MonoBehaviour
 {
-    //[SerializeField] private GameObject missile;
+    private SpecialPowers spScript;
+   
     private GameObject player;
-    private PlayerMovement player_script;
-    private float speed = 10f;
-
-    // Start is called before the first frame update
+  
+    
     void Start()
     {
-        //animator = missile.GetComponent<Animator>();
-        player = GameObject.FindWithTag("Player");
-        player_script = player.GetComponent<PlayerMovement>();
+        spScript = GameObject.FindWithTag("Player").GetComponent<SpecialPowers>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,8 +20,8 @@ public class SpeedUp : MonoBehaviour
         if (collision.tag == "Player")
         {
             gameObject.SetActive(false);
-            player_script.speed = 10f;
-            Invoke("SpeedUpp", speed);
+            spScript.SpeedUp();
+            
         }else if (collision.tag == "Missile")
         {
             Animator animator = collision.GetComponent<Animator>();
@@ -33,13 +31,4 @@ public class SpeedUp : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-    private void SpeedUpp()
-    {
-        player_script.speed = 5;
-        Destroy(gameObject);
-    }
-
-
 }

@@ -1,81 +1,133 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [Header("Missile Prefabs")]
     [SerializeField] private GameObject homingMissilePrefab;
+    [SerializeField] private GameObject oneHitMissilePrefab;
     [SerializeField] private GameObject waveMissilePrefab;
-    [SerializeField] private GameObject OneHitMissilePrefab;
-    [SerializeField] private GameObject warningIndicatorPrefab;
-    [SerializeField] private Transform playerTransform;
 
-    private float oneHitInterval = 10f;
-    private float homingInterval = 3.5f;
-    private float waveInterval = 2f;
-    private float missileSpawnDistance = 30f;
-    private float warningDuration = 1f;
+    [Header("Spawn Settings")]
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private float spawnDistance = 30f;
+
+    [Header("Spawn Timers (seconds)")]
+    [SerializeField] private float homingSpawnRate = 4f;
+    [SerializeField] private float oneHitSpawnRate = 10f;
+    [SerializeField] private float waveSpawnRate = 6f;
+
+    [Header("Difficulty Scaling")]
+    [SerializeField] private float difficultyIncreaseInterval = 15f;
+    [SerializeField] private float spawnRateMultiplier = 0.9f; // reduces interval
+    [SerializeField] private int startingMissileCap = 15;
+    [SerializeField] private int missileCapIncrease = 5;
+
+    private float homingTimer, oneHitTimer, waveTimer, difficultyTimer;
+    private int currentMissileCap;
+    private List<GameObject> activeMissiles = new List<GameObject>();
+
+    public bool canSpawn = true;
 
     void Start()
     {
-        // Start both spawning routines
-        StartCoroutine(SpawnHomingMissiles());
-        StartCoroutine(SpawnWaveMissiles());
-        StartCoroutine(SpawnOneHitMissile());
+        homingTimer = homingSpawnRate;
+        oneHitTimer = oneHitSpawnRate;
+        waveTimer = waveSpawnRate;
+        difficultyTimer = difficultyIncreaseInterval;
+
+        currentMissileCap = startingMissileCap;
     }
 
-    // === HOMING MISSILES ===
-    private IEnumerator SpawnHomingMissiles()
+    void Update()
     {
-        yield return new WaitForSeconds(homingInterval);
+        if (!canSpawn || playerTransform == null) return;
 
-        float angle = Random.Range(0f, 360f);
-        Vector3 offset = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * missileSpawnDistance;
-        Vector3 spawnPosition = playerTransform.position + offset;
+        homingTimer -= Time.deltaTime;
+        oneHitTimer -= Time.deltaTime;
+        waveTimer -= Time.deltaTime;
+        difficultyTimer -= Time.deltaTime;
 
-        GameObject missile = Instantiate(homingMissilePrefab, spawnPosition, Quaternion.identity);
-        FindObjectOfType<IndicatorManager>()?.AddTarget(missile, false);
+        if (activeMissiles.Count < currentMissileCap)
+        {
+            if (homingTimer <= 0f)
+            {
+                SpawnMissile(homingMissilePrefab, MissileType.Homing);
+                homingTimer = homingSpawnRate;
+            }
 
-        StartCoroutine(SpawnHomingMissiles());
+            if (oneHitTimer <= 0f)
+            {
+                SpawnMissile(oneHitMissilePrefab, MissileType.OneHit);
+                oneHitTimer = oneHitSpawnRate;
+            }
+
+            if (waveTimer <= 0f)
+            {
+                SpawnMissile(waveMissilePrefab, MissileType.Wave);
+                waveTimer = waveSpawnRate;
+            }
+        }
+
+        if (difficultyTimer <= 0f)
+        {
+            ScaleDifficulty();
+            difficultyTimer = difficultyIncreaseInterval;
+        }
     }
 
-
-    // === ONEHIT MISSILE === 
-
-    private IEnumerator SpawnOneHitMissile()
+    private void ScaleDifficulty()
     {
-        yield return new WaitForSeconds(oneHitInterval);
-
-        float angle = Random.Range(0f, 360f);
-        Vector3 offset = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * missileSpawnDistance;
-        Vector3 spawnPosition = playerTransform.position + offset;
-
-        GameObject oneHitMissile = Instantiate(OneHitMissilePrefab, spawnPosition, Quaternion.identity);
-        FindObjectOfType<IndicatorManager>()?.AddTarget(oneHitMissile, false);
-
-        StartCoroutine(SpawnOneHitMissile());
+        homingSpawnRate *= spawnRateMultiplier;
+        oneHitSpawnRate *= spawnRateMultiplier;
+        waveSpawnRate *= spawnRateMultiplier;
+        currentMissileCap += missileCapIncrease;
     }
 
-    // === STRAIGHT WAVE MISSILES WITH WARNING ===
-    private IEnumerator SpawnWaveMissiles()
+    private enum MissileType { Homing, OneHit, Wave }
+
+    private void SpawnMissile(GameObject missilePrefab, MissileType type)
     {
-        yield return new WaitForSeconds(waveInterval);
+        Vector2 dir = Random.insideUnitCircle.normalized;
+        Vector3 spawnPos = playerTransform.position + (Vector3)(dir * spawnDistance);
 
-        Vector2 direction = Random.insideUnitCircle.normalized;
-        Vector3 spawnPosition = playerTransform.position + (Vector3)(direction * missileSpawnDistance);
+        GameObject missile = Instantiate(missilePrefab, spawnPos, Quaternion.identity);
+        activeMissiles.Add(missile);
 
-        // No more world-space indicators. We use MissileIndicatorManager now.
+        // Cleanup on destroy
+        MissileBase baseScript = missile.GetComponent<MissileBase>();
+        if (baseScript != null)
+        {
+            baseScript.OnMissileDestroyed += () =>
+            {
+                if (missile != null) activeMissiles.Remove(missile);
+            };
+        }
 
-        // Wait before spawning actual missile (acts like warning delay)
-        yield return new WaitForSeconds(warningDuration);
+        switch (type)
+        {
+            case MissileType.Homing:
+            case MissileType.OneHit:
+                FindObjectOfType<IndicatorManager>()?.AddTarget(missile, false);
+                break;
 
-        // Spawn wave missile
-        GameObject waveMissile = Instantiate(waveMissilePrefab, spawnPosition, Quaternion.identity);
-        waveMissile.GetComponent<WaveMissile>().SetDirection((playerTransform.position - spawnPosition).normalized);
-
-        // Register with indicator system
-        FindObjectOfType<IndicatorManager>()?.AddTarget(waveMissile);
-
-        StartCoroutine(SpawnWaveMissiles());
+            case MissileType.Wave:
+                StartCoroutine(SpawnWaveMissileWithDelay(missile, spawnPos));
+                break;
+        }
     }
 
+    private IEnumerator SpawnWaveMissileWithDelay(GameObject missile, Vector3 spawnPos)
+    {
+        missile.SetActive(false); // Hide during warning
+        yield return new WaitForSeconds(1f); // Warning duration
+
+        if (missile != null)
+        {
+            missile.SetActive(true);
+            missile.GetComponent<WaveMissile>().SetDirection((playerTransform.position - spawnPos).normalized);
+            FindObjectOfType<IndicatorManager>()?.AddTarget(missile);
+        }
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class OneHitMissile : MonoBehaviour
 {
+    GameOver gameoverscript;
     [SerializeField] GameObject coinPrefab;
     private PlayerMovement playerMovement;
     private Transform target;
@@ -20,15 +21,28 @@ public class OneHitMissile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
         player = GameObject.FindWithTag("Player");
         target = player.transform;
-        missile_speed = Random.Range(missile_minSpeed, missile_MaxSpeed);
+        gameoverscript = GameObject.FindGameObjectWithTag("GameOver").GetComponent<GameOver>();
         playerMovement = player.GetComponent<PlayerMovement>();
-
         missile_rb = GetComponent<Rigidbody2D>();
-        playerMovement.RightPS.Pause();
-        playerMovement.LeftPS.Pause();
+
+        // --- Core dynamic speed logic ---
+        float playerSpeed = playerMovement.orginalSpeed;
+
+        // Adjust missile speed based on player speed
+        // You can tweak multipliers to balance difficulty
+        float speedMultiplier = 1.2f; // missile is 20% faster than player
+        missile_speed = Mathf.Clamp(playerSpeed * speedMultiplier, missile_minSpeed, missile_MaxSpeed);
+
+        // Adjust rotation speed based on player speed (higher speed = lower rotation, harder to track)
+        float rotationBase = 150f;
+        float rotationFactor = 5f;
+        rotate_speed = Mathf.Clamp(rotationBase - playerSpeed * rotationFactor, 100f, 500f); // Keep rotation within bounds
+
+        // Optional: Pause thrust particles
+        playerMovement.RightPS?.Pause();
+        playerMovement.LeftPS?.Pause();
     }
 
     // Update is called once per frame
@@ -82,18 +96,29 @@ public class OneHitMissile : MonoBehaviour
     {
         if (playerMovement.isGod) { return; }
 
-        //0 means left side damage
-        //1 means right side damage
         if (playerMovement.both_Damaged)
         {
             Restart_Game();
             Debug.Log("Game Over");
         }
+        else
+        {
+            playerMovement.play_right_PS = true;
+            playerMovement.RightTR.enabled = false;
+            playerMovement.both_Damaged = true;
+
+            playerMovement.play_left_PS = true;
+            playerMovement.LeftTR.enabled = false;
+            playerMovement.both_Damaged = true;
+
+            playerMovement.both_Damaged = true;
+        }
+
     }
 
     void Restart_Game()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameoverscript.GameOverFunction();
     }
 
     public IEnumerator spawnSpecialPower(float Time_Gap, GameObject SP)

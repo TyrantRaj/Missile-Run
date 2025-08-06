@@ -12,6 +12,7 @@ TagManager:
   - RightPS
   - SPspawn
   - Sound
+  - GameOver
   layers:
   - Default
   - TransparentFX

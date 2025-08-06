@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class targeting_missile : MonoBehaviour
 {
-
+    GameOver gameoverscript;
     [SerializeField] GameObject coinPrefab;
     private PlayerMovement playerMovement;
     private Transform target;
@@ -24,14 +24,28 @@ public class targeting_missile : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         target = player.transform;
-
+        gameoverscript = GameObject.FindGameObjectWithTag("GameOver").GetComponent<GameOver>();
         playerMovement = player.GetComponent<PlayerMovement>();
-
         missile_rb = GetComponent<Rigidbody2D>();
-        missile_speed = Random.Range(missile_minSpeed, missile_MaxSpeed);
-        playerMovement.RightPS.Pause();
-        playerMovement.LeftPS.Pause();
+
+        // --- Core dynamic speed logic ---
+        float playerSpeed = playerMovement.orginalSpeed;
+
+        // Adjust missile speed based on player speed
+        // You can tweak multipliers to balance difficulty
+        float speedMultiplier = 1.2f; // missile is 20% faster than player
+        missile_speed = Mathf.Clamp(playerSpeed * speedMultiplier, missile_minSpeed, missile_MaxSpeed);
+
+        // Adjust rotation speed based on player speed (higher speed = lower rotation, harder to track)
+        float rotationBase = 250f;
+        float rotationFactor = 5f;
+        rotate_speed = Mathf.Clamp(rotationBase - playerSpeed * rotationFactor, 100f, 500f); // Keep rotation within bounds
+
+        // Optional: Pause thrust particles
+        playerMovement.RightPS?.Pause();
+        playerMovement.LeftPS?.Pause();
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -127,7 +141,7 @@ public class targeting_missile : MonoBehaviour
 
     void Restart_Game()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameoverscript.GameOverFunction();
     }
 
 

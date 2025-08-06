@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b85e7c3d7e2ec42abfd91305853e05, type: 3}
+  m_Name: JetDatabase
+  m_EditorClassIdentifier: 
+  jetSkins:
+  - sprite: {fileID: 2015569589, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 3
+    rotationSpeed: 2
+  - sprite: {fileID: 1270580697, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 3.4
+    rotationSpeed: 2.2
+  - sprite: {fileID: 932582385, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 3.7
+    rotationSpeed: 2.25
+  - sprite: {fileID: -904738920, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 4.1
+    rotationSpeed: 2.45
+  - sprite: {fileID: 1388818390, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 4.5
+    rotationSpeed: 2.8
+  - sprite: {fileID: -1157201889, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 4.8
+    rotationSpeed: 3
+  - sprite: {fileID: -597119738, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 5
+    rotationSpeed: 3.1
+  - sprite: {fileID: -1645540597, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 5.4
+    rotationSpeed: 3.4
+  - sprite: {fileID: -1129097517, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 5.7
+    rotationSpeed: 3.6
+  - sprite: {fileID: 1729462994, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    moveSpeed: 6
+    rotationSpeed: 4
