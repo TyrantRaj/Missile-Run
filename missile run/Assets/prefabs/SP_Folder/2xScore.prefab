@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 324123571705881908}
   - component: {fileID: 136742146990624398}
   m_Layer: 6
-  m_Name: SpeedUp
+  m_Name: 2xScore
   m_TagString: SP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

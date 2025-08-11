@@ -19,6 +19,14 @@ public class CurrencyManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void CollectCoin(int amount)
+    {
+        int totalCoins = PlayerPrefs.GetInt("TotalCoins", 0);
+        totalCoins += amount;
+        PlayerPrefs.SetInt("TotalCoins", totalCoins);
+        PlayerPrefs.Save();
+    }
+
     public void SaveSessionCoinsToTotal()
     {
         int totalCoins = PlayerPrefs.GetInt("TotalCoins", 0);

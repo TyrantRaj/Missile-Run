@@ -11,6 +11,11 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(scenename);
     }
 
+    public void LoadAchievements()
+    {
+        SceneManager.LoadScene("MissionScene", LoadSceneMode.Single);
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quit Game"); // This will show in Editor

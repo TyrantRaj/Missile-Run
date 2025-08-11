@@ -20,7 +20,7 @@ public class MissionManager : MonoBehaviour
         if (!mission.isCompleted || mission.isCollected) return;
 
         mission.isCollected = true;
-        CurrencyManager.instance.AddCoin(mission.coinReward);
+        CurrencyManager.instance.CollectCoin(mission.coinReward);
         SaveMissionProgress();
     }
 

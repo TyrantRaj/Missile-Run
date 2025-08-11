@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     private float lastMultiplierTime = 0f;
 
     public float score = 0f;
-    public float scoreMultiplier = 1f; // Increase this for faster score gain
+    public float scoreMultiplier = 1f; 
     public TextMeshProUGUI scoreText;
 
     private bool isRunning = true;
@@ -57,6 +57,21 @@ public class ScoreManager : MonoBehaviour
     public void StopScoring()
     {
         isRunning = false;
+        ArchivementScore((int) score);
+    }
+
+    private void ArchivementScore(int score)
+    {
+
+        foreach (var mission in MissionManager.Instance.currentMissions)
+        {
+            if (mission.missionType == Mission.MissionType.Score && !mission.isCompleted)
+            {
+                mission.currentValue += score;
+                if (mission.currentValue >= mission.targetValue)
+                    mission.isCompleted = true;
+            }
+        }
     }
 
     public void AddScore(int amount, Vector3 worldPos)
@@ -64,10 +79,10 @@ public class ScoreManager : MonoBehaviour
         score += amount;
         UpdateUI();
 
-        // Spawn in world space
         GameObject popup = Instantiate(scorePopupPrefab, worldPos, Quaternion.identity);
         popup.GetComponent<ScorePopup>().SetText("+" + amount);
     }
+
 
 
     public void ResetScore()

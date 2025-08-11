@@ -7,6 +7,10 @@ public class FPSDisplay : MonoBehaviour
     private float timer;
     private int frameCount;
 
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
     void Update()
     {
         timer += Time.unscaledDeltaTime;

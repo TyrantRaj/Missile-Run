@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class WaveMissile : MonoBehaviour
 {
+    [SerializeField] private GameObject bigCoinPrefab;
+    [SerializeField, Range(0f, 1f)] private float bigCoinSpawnChance = 0.1f;
+
+    SurviveTime timer;
     GameOver gameoverscript;
     [SerializeField] GameObject coinPrefab;
     [SerializeField] public float missile_speed = 10f;
@@ -29,6 +33,7 @@ public class WaveMissile : MonoBehaviour
 
     void Start()
     {
+        timer = FindAnyObjectByType<SurviveTime>();
         player = GameObject.FindWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         gameoverscript = GameObject.FindGameObjectWithTag("GameOver").GetComponent<GameOver>();
@@ -52,6 +57,10 @@ public class WaveMissile : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
+            if (timer != null)
+            {
+                timer.ResetNoHitTimer();
+            }
             collision.GetComponent<ShakeTrigger>()?.TriggerShake();
             Damage_Player();
             Explode();
@@ -61,7 +70,14 @@ public class WaveMissile : MonoBehaviour
             Vector3 explosionPos = collision.transform.position;
             ScoreManager.Instance?.AddScore(100, transform.position);
 
-            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            if (Random.value < bigCoinSpawnChance && bigCoinPrefab != null)
+            {
+                Instantiate(bigCoinPrefab, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            }
 
             Explode();
         }
@@ -123,7 +139,15 @@ public class WaveMissile : MonoBehaviour
 
     private void Explode()
     {
-        
+        foreach (var mission in MissionManager.Instance.currentMissions)
+        {
+            if (mission.missionType == Mission.MissionType.destroymissiles && !mission.isCompleted)
+            {
+                mission.currentValue++;
+                if (mission.currentValue >= mission.targetValue)
+                    mission.isCompleted = true;
+            }
+        }
         FindObjectOfType<IndicatorManager>()?.RemoveTarget(gameObject);
         anim.Play("Explosion");
         SoundManager.PlaySound(SoundManager.Sound.Explosion);

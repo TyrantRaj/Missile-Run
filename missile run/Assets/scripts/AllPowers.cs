@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class AllPowers : MonoBehaviour
 {
+    SurviveTime timer;
     [SerializeField] Image FillImg;
     [SerializeField] Sprite OrdinarySprite;
     [SerializeField] Sprite duringReduceSprite;
@@ -11,8 +12,14 @@ public class AllPowers : MonoBehaviour
     public float slowMoDuration = 5f;
     public Slider progressBar;
 
+    private void Start()
+    {
+        timer = FindAnyObjectByType<SurviveTime>();
+    }
+
     public void EnableSlowMotion()
     {
+        timer.ResetNoSlowMotionTimer();
         Time.timeScale = 0.3f;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
 

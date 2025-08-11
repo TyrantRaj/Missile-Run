@@ -17,6 +17,7 @@ public class MissionsSceneController : MonoBehaviour
 
     void PopulateMissionList()
     {
+        // Clear old entries
         foreach (var entry in missionEntries)
             Destroy(entry);
         missionEntries.Clear();
@@ -29,25 +30,33 @@ public class MissionsSceneController : MonoBehaviour
             GameObject entryGO = Instantiate(missionEntryPrefab, missionsContentParent);
             missionEntries.Add(entryGO);
 
+            // Get UI references
             var texts = entryGO.GetComponentsInChildren<TMP_Text>();
             TMP_Text descText = texts[0];
             TMP_Text progressText = texts[1];
             TMP_Text rewardText = texts[2];
             Button collectBtn = entryGO.GetComponentInChildren<Button>();
+            Slider progressSlider = entryGO.GetComponentInChildren<Slider>();
 
+            // Set mission details
             descText.text = mission.description;
             progressText.text = $"{mission.currentValue} / {mission.targetValue}";
-            rewardText.text = $"Reward: {mission.coinReward} coins";
+            rewardText.text = $"{mission.coinReward} ";
 
-            // Collect button state
+            // Set slider value (0 to 1, clamped)
+            if (progressSlider != null)
+                progressSlider.value = Mathf.Clamp01((float)mission.currentValue / mission.targetValue);
+
+            // Button state and click event
             collectBtn.interactable = mission.isCompleted && !mission.isCollected;
             collectBtn.onClick.RemoveAllListeners();
-            int missionIndex = i; // Capture index for closure
+            int missionIndex = i; // Capture for closure
             collectBtn.onClick.AddListener(() =>
             {
                 MissionManager.Instance.CollectReward(missionIndex);
                 collectBtn.interactable = false;
                 progressText.text = "Completed!";
+                if (progressSlider != null) progressSlider.value = 1f; // Fill slider
             });
         }
     }

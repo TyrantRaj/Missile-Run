@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class OneHitMissile : MonoBehaviour
 {
+    [SerializeField] private GameObject bigCoinPrefab;
+    [SerializeField, Range(0f, 1f)] private float bigCoinSpawnChance = 0.1f;
+
+    SurviveTime timer;
     GameOver gameoverscript;
     [SerializeField] GameObject coinPrefab;
     private PlayerMovement playerMovement;
@@ -21,6 +25,7 @@ public class OneHitMissile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer = FindAnyObjectByType<SurviveTime>();
         player = GameObject.FindWithTag("Player");
         target = player.transform;
         gameoverscript = GameObject.FindGameObjectWithTag("GameOver").GetComponent<GameOver>();
@@ -36,7 +41,7 @@ public class OneHitMissile : MonoBehaviour
         missile_speed = Mathf.Clamp(playerSpeed * speedMultiplier, missile_minSpeed, missile_MaxSpeed);
 
         // Adjust rotation speed based on player speed (higher speed = lower rotation, harder to track)
-        float rotationBase = 150f;
+        float rotationBase = 100f;
         float rotationFactor = 5f;
         rotate_speed = Mathf.Clamp(rotationBase - playerSpeed * rotationFactor, 100f, 500f); // Keep rotation within bounds
 
@@ -62,13 +67,25 @@ public class OneHitMissile : MonoBehaviour
 
         if (collision.tag == "Player")
         {
+            if (timer != null)
+            {
+                timer.ResetNoHitTimer();
+            }
             Damage_Player();
             Explode();
 
         }
         else if (collision.tag == "Missile")
         {
-            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            if (Random.value < bigCoinSpawnChance && bigCoinPrefab != null)
+            {
+                Instantiate(bigCoinPrefab, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            }
+
             Vector3 explosionPos = collision.transform.position;
             ScoreManager.Instance?.AddScore(100, transform.position);
 
@@ -133,7 +150,15 @@ public class OneHitMissile : MonoBehaviour
 
     void Explode()
     {
-        
+        foreach (var mission in MissionManager.Instance.currentMissions)
+        {
+            if (mission.missionType == Mission.MissionType.destroymissiles && !mission.isCompleted)
+            {
+                mission.currentValue++;
+                if (mission.currentValue >= mission.targetValue)
+                    mission.isCompleted = true;
+            }
+        }
         FindObjectOfType<IndicatorManager>().RemoveTarget(gameObject);
         anim.Play("Explosion");
         SoundManager.PlaySound(SoundManager.Sound.Explosion);

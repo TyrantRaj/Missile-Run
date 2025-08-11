@@ -8,7 +8,9 @@ public class GameOver : MonoBehaviour
     private bool isGameOverUIVisible = false;
     private bool isAnimating = false;
 
+    [SerializeField] SurviveTime timer;
 
+    [SerializeField] TMP_Text time_text;
     [SerializeField] GameObject GameUi;
     [SerializeField] EnemySpawner spawner;
     [SerializeField] Animator ExplotionAnim;
@@ -38,10 +40,15 @@ public class GameOver : MonoBehaviour
     public void GameOverFunction()
     {
         if (isGameOverUIVisible || isAnimating) return;
-
+        Time.timeScale = 1f;
+        timer.timerRunning = false;
         GameUi.SetActive(false);
         spawner.canSpawn = false;
         scoremanager.StopScoring();
+
+        // Stop timer and show survival time
+        float survivedSeconds = timer.currentTime; // from SurviveTime script
+        time_text.text = FormatTime(survivedSeconds);
 
         GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
         foreach (GameObject missile in missiles)
@@ -69,6 +76,15 @@ public class GameOver : MonoBehaviour
 
         StartCoroutine(ShowGameOverUI());
     }
+
+    
+    private string FormatTime(float timeInSeconds)
+    {
+        int minutes = Mathf.FloorToInt(timeInSeconds / 60f);
+        int seconds = Mathf.FloorToInt(timeInSeconds % 60f);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
 
 
     IEnumerator ShowGameOverUI()
@@ -136,8 +152,8 @@ public class GameOver : MonoBehaviour
     {
         displayedCoins = 0;
         displayedScore = 0;
-        CoinsCollectedTxt.text = "Coins: 0";
-        ScoreTxt.text = "Score: 0";
+        CoinsCollectedTxt.text = "0";
+        ScoreTxt.text = "0";
 
         float scaleDuration = 0.1f;
         Vector3 normalScale = Vector3.one;
@@ -151,7 +167,7 @@ public class GameOver : MonoBehaviour
             {
                 displayedCoins += Mathf.CeilToInt(countSpeed * Time.deltaTime);
                 displayedCoins = Mathf.Min(displayedCoins, targetCoins);
-                CoinsCollectedTxt.text = "Coins: " + displayedCoins;
+                CoinsCollectedTxt.text = "" +displayedCoins;
                 StartCoroutine(PopTextScale(CoinsCollectedTxt.rectTransform, popScale, normalScale, scaleDuration));
                 updated = true;
             }
@@ -160,7 +176,7 @@ public class GameOver : MonoBehaviour
             {
                 displayedScore += Mathf.CeilToInt(countSpeed * Time.deltaTime);
                 displayedScore = Mathf.Min(displayedScore, targetScore);
-                ScoreTxt.text = "Score: " + displayedScore;
+                ScoreTxt.text = "" + displayedScore;
                 StartCoroutine(PopTextScale(ScoreTxt.rectTransform, popScale, normalScale, scaleDuration));
                 updated = true;
             }

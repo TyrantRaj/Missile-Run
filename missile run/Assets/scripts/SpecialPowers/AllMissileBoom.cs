@@ -1,13 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class AllMissileBoom : MonoBehaviour
 {
+    private SurviveTime timer;
+
+    private void Start()
+    {
+        timer = FindAnyObjectByType<SurviveTime>();    
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+
+            foreach (var mission in MissionManager.Instance.currentMissions)
+            {
+                if (mission.missionType == Mission.MissionType.emf && !mission.isCompleted)
+                {
+                    mission.currentValue++;
+                    if (mission.currentValue >= mission.targetValue)
+                        mission.isCompleted = true;
+                }
+            }
+
+            if(timer != null)
+            {
+                timer.ResetNoPowerUpTimer();
+            }
+            
+
             GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
             foreach (GameObject missile in missiles)
             {

@@ -13,33 +13,53 @@ MonoBehaviour:
   m_Name: JetDatabase
   m_EditorClassIdentifier: 
   jetSkins:
-  - sprite: {fileID: 2015569589, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Skybolt
     moveSpeed: 3
     rotationSpeed: 2
-  - sprite: {fileID: 1270580697, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    description: A nimble pioneer of the skies.
+    sprite: {fileID: 2015569589, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Rustburner
     moveSpeed: 3.4
     rotationSpeed: 2.2
-  - sprite: {fileID: 932582385, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    description: Old but durable.
+    sprite: {fileID: 1270580697, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Iron Talon
     moveSpeed: 3.7
     rotationSpeed: 2.25
-  - sprite: {fileID: -904738920, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    description: Forged for impact.
+    sprite: {fileID: 932582385, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Solar Wasp
     moveSpeed: 4.1
     rotationSpeed: 2.45
-  - sprite: {fileID: 1388818390, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    description: Slick and sunny fast.
+    sprite: {fileID: -904738920, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Thunderbite
     moveSpeed: 4.5
     rotationSpeed: 2.8
-  - sprite: {fileID: -1157201889, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    description: Zaps across battle.
+    sprite: {fileID: 1388818390, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Toxic Fang
     moveSpeed: 4.8
     rotationSpeed: 3
-  - sprite: {fileID: -597119738, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    description: Fast and venomous.
+    sprite: {fileID: -1157201889, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Swamp Ghost
     moveSpeed: 5
     rotationSpeed: 3.1
-  - sprite: {fileID: -1645540597, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    description: Moves in shadows.
+    sprite: {fileID: -597119738, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Crimson Edge
     moveSpeed: 5.4
     rotationSpeed: 3.4
-  - sprite: {fileID: -1129097517, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    description: Sharper, deadlier.
+    sprite: {fileID: -1645540597, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Glacier Bat
     moveSpeed: 5.7
     rotationSpeed: 3.6
-  - sprite: {fileID: 1729462994, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+    description: Cold and clean.
+    sprite: {fileID: -1129097517, guid: d66902970eb72254f868f2a6057e34f2, type: 3}
+  - name: Void Reaper
     moveSpeed: 6
     rotationSpeed: 4
+    description: Max speed & turn!
+    sprite: {fileID: 1729462994, guid: d66902970eb72254f868f2a6057e34f2, type: 3}

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,23 +23,10 @@ public class SwipeMenu : MonoBehaviour
     private bool isDragging = false;
     private bool[] unlockedSkins;
 
-    public List<JetData> jetSkins = new List<JetData>()
-{
-    new JetData { name = "Skybolt", moveSpeed = 3.0f, rotationSpeed = 2.0f, description = "A nimble pioneer of the skies." },
-    new JetData { name = "Rustburner", moveSpeed = 3.4f, rotationSpeed = 2.2f, description = "Old but durable." },
-    new JetData { name = "Iron Talon", moveSpeed = 3.7f, rotationSpeed = 2.25f, description = "Forged for impact." },
-    new JetData { name = "Solar Wasp", moveSpeed = 4.1f, rotationSpeed = 2.45f, description = "Slick and sunny fast." },
-    new JetData { name = "Thunderbite", moveSpeed = 4.5f, rotationSpeed = 2.8f, description = "Zaps across battle." },
-    new JetData { name = "Toxic Fang", moveSpeed = 4.8f, rotationSpeed = 3.0f, description = "Fast and venomous." },
-    new JetData { name = "Swamp Ghost", moveSpeed = 5.0f, rotationSpeed = 3.1f, description = "Moves in shadows." },
-    new JetData { name = "Crimson Edge", moveSpeed = 5.4f, rotationSpeed = 3.4f, description = "Sharper, deadlier." },
-    new JetData { name = "Glacier Bat", moveSpeed = 5.7f, rotationSpeed = 3.6f, description = "Cold and clean." },
-    new JetData { name = "Void Reaper", moveSpeed = 6.0f, rotationSpeed = 4.0f, description = "Max speed & turn!" }
-};
+    private List<JetData> jetSkins;
+    private JetDatabase jetDatabase;
 
-
-    [SerializeField]
-    private int[] jetPrices; // Set prices in Inspector
+    [SerializeField] private int[] jetPrices;
 
     private float targetSpeedValue = 0f;
     private float targetRotationValue = 0f;
@@ -49,6 +36,16 @@ public class SwipeMenu : MonoBehaviour
 
     void Start()
     {
+        //  Load from Resources folder
+        jetDatabase = Resources.Load<JetDatabase>("JetDatabase");
+        if (jetDatabase == null)
+        {
+            Debug.LogError("JetDatabase not found in Resources!");
+            return;
+        }
+
+        jetSkins = new List<JetData>(jetDatabase.jetSkins);
+
         UpdateTotalCoinsUI();
 
         int childCount = transform.childCount;
@@ -86,20 +83,35 @@ public class SwipeMenu : MonoBehaviour
         totalCoinsText.text = totalCoins.ToString();
     }
 
+    private float scrollVelocity = 0f;
+    private float lastScrollPos = 0f;
+
     void Update()
     {
+        float lerpSpeed = 5f;
+
         if (Input.GetMouseButton(0))
         {
             isDragging = true;
             scrollPos = scrollBar.value;
+
+            // Track velocity for momentum
+            scrollVelocity = (scrollPos - lastScrollPos) / Time.deltaTime;
+            lastScrollPos = scrollPos;
         }
         else
         {
             if (isDragging)
             {
                 isDragging = false;
-                float distance = 1f / (pos.Length - 1f);
 
+                // When released, apply momentum scroll
+                scrollVelocity = Mathf.Clamp(scrollVelocity, -1f, 1f); // Limit crazy fast flicks
+                scrollPos += scrollVelocity * 0.2f; // Apply momentum strength
+                scrollPos = Mathf.Clamp01(scrollPos);
+
+                // Snap to nearest
+                float distance = 1f / (pos.Length - 1f);
                 for (int i = 0; i < pos.Length; i++)
                 {
                     if (scrollPos < pos[i] + (distance / 2) && scrollPos > pos[i] - (distance / 2))
@@ -110,15 +122,16 @@ public class SwipeMenu : MonoBehaviour
                         SoundManager.PlaySound(SoundManager.Sound.Scroll);
                         UpdateCharacterName();
                         UpdateButtonText();
-                        break; //  Removed auto save
+                        break;
                     }
                 }
             }
 
-            scrollBar.value = Mathf.Lerp(scrollBar.value, targetPos, Time.deltaTime * 10);
+            // Smoothly lerp to target
+            scrollBar.value = Mathf.Lerp(scrollBar.value, targetPos, Time.deltaTime * 8);
         }
 
-        float lerpSpeed = 5f;
+        // Smooth attribute UI update
         displayedSpeedValue = Mathf.Lerp(displayedSpeedValue, targetSpeedValue, Time.deltaTime * lerpSpeed);
         displayedRotationValue = Mathf.Lerp(displayedRotationValue, targetRotationValue, Time.deltaTime * lerpSpeed);
 
@@ -128,12 +141,14 @@ public class SwipeMenu : MonoBehaviour
         if (rotationBar != null)
             rotationBar.value = displayedRotationValue;
 
+        // Scale effect on selected item
         for (int i = 0; i < transform.childCount; i++)
         {
             Vector2 targetScale = (i == selectedIndex) ? new Vector2(1.2f, 1.2f) : new Vector2(1f, 1f);
             transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, targetScale, Time.deltaTime * 5);
         }
     }
+
 
     void UpdateCharacterName()
     {
@@ -167,8 +182,8 @@ public class SwipeMenu : MonoBehaviour
     {
         if (unlockedSkins[selectedIndex])
         {
-            SaveSelectedCharacter(); // Save only when clicked
-            SceneManager.LoadScene("MainMenu"); // Replace with your scene name
+            SaveSelectedCharacter();
+            SceneManager.LoadScene("MainMenu");
         }
         else
         {
@@ -194,7 +209,6 @@ public class SwipeMenu : MonoBehaviour
         else
         {
             Debug.Log("Not enough coins to unlock this jet.");
-            // Optionally: Show UI warning
         }
     }
 
@@ -206,7 +220,7 @@ public class SwipeMenu : MonoBehaviour
         PlayerPrefs.Save();
 
         Debug.Log($"Cheat: Added {amount} coins. Total: {totalCoins}");
-        UpdateTotalCoinsUI(); // Refresh display
+        UpdateTotalCoinsUI();
     }
 
     public void UnlockSkin(int index)
@@ -238,5 +252,4 @@ public class SwipeMenu : MonoBehaviour
             SelectedJetStats.selectedJetIndex = selectedIndex;
         }
     }
-
 }

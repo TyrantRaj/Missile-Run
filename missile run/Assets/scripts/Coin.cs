@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    private SpecialPowers SPscript;
     public float moveSpeed = 5f;
     public float pickupDistance = 2f;
     private Transform player;
@@ -10,6 +11,8 @@ public class Coin : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        SPscript = FindAnyObjectByType<SpecialPowers>();
+        pickupDistance = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().CoinpickupDistance;
     }
 
     void Update()
@@ -37,8 +40,30 @@ public class Coin : MonoBehaviour
 
     void Collect()
     {
-        CurrencyManager.instance.AddCoin(1);
+        if (SPscript != null) {
+            if (SPscript.Is2xCoin)
+            {
+                CurrencyManager.instance.AddCoin(2);
+            }
+            else
+            {
+                CurrencyManager.instance.AddCoin(1);
+            }
+        }
 
+        
+
+        foreach (var mission in MissionManager.Instance.currentMissions)
+        {
+            if (mission.missionType == Mission.MissionType.Coin && !mission.isCompleted)
+            {
+                mission.currentValue++;
+                if (mission.currentValue >= mission.targetValue)
+                    mission.isCompleted = true;
+            }
+        }
+
+        MissionManager.Instance.SaveMissionProgress();
         // Play sound or animation here if needed
         SoundManager.PlaySound(SoundManager.Sound.CoinPickUp);
         Destroy(gameObject);

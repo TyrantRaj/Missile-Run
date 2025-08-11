@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6886118041978878219}
   - component: {fileID: 1951012351471970416}
   - component: {fileID: 5553161594186495172}
-  - component: {fileID: 5286028389545438947}
   - component: {fileID: 324123571705881908}
   - component: {fileID: 136742146990624398}
+  - component: {fileID: 7198281611692242963}
   m_Layer: 6
-  m_Name: SpeedUp
+  m_Name: Magnet
   m_TagString: SP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: 4a6905131a113ee4087b20fee035d970, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02b556fc9c483ce42b7d7dc798b8ec0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,20 +126,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &5286028389545438947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5730056335239140228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 797e1182b84000244a4cea7e48c060a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 4a6905131a113ee4087b20fee035d970, type: 3}
+  m_Radius: 0.75
 --- !u!50 &324123571705881908
 Rigidbody2D:
   serializedVersion: 5
@@ -179,4 +166,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6883108ba9fa0964cb2c476a8a786156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicatorSprite: {fileID: 21300000, guid: 4a6905131a113ee4087b20fee035d970, type: 3}
+  indicatorSprite: {fileID: 21300000, guid: 02b556fc9c483ce42b7d7dc798b8ec0d, type: 3}
+--- !u!114 &7198281611692242963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5730056335239140228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4d19b5a3934174f93d7b77b98682e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 02b556fc9c483ce42b7d7dc798b8ec0d, type: 3}

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float CoinpickupDistance = 2f;
     public SpriteRenderer playerSpriteRenderer;
     public bool isGod = false;
     private SpawnSP spawnsp;

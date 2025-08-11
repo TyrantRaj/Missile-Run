@@ -253,6 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddad4a6d394de549a5a50308018c716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bigCoinPrefab: {fileID: 4658812214942074533, guid: 996e590f29b1c4a40937434c1e5fb3b8, type: 3}
+  bigCoinSpawnChance: 0.1
   coinPrefab: {fileID: 4658812214942074533, guid: 1e03c18c2a571a64f8053cf258e58991, type: 3}
   missile_speed: 6
   rb_wave: {fileID: 4644478007872229827}
@@ -409,6 +411,10 @@ PrefabInstance:
     - target: {fileID: 3098483728307065520, guid: b63aac96e84c2574f8477a4efa4ab9c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755984897864055153, guid: b63aac96e84c2574f8477a4efa4ab9c5, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8145112121645868435, guid: b63aac96e84c2574f8477a4efa4ab9c5, type: 3}
       propertyPath: m_Name

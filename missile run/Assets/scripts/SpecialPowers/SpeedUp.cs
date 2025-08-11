@@ -7,11 +7,13 @@ public class SpeedUp : MonoBehaviour
 {
     private SpecialPowers spScript;
    
-    private GameObject player;
-  
-    
+    [SerializeField] private Sprite Icon;
+
+    private SurviveTime timer;
+
     void Start()
     {
+        timer = FindAnyObjectByType<SurviveTime>();
         spScript = GameObject.FindWithTag("Player").GetComponent<SpecialPowers>();
     }
 
@@ -19,8 +21,22 @@ public class SpeedUp : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            if (timer != null)
+            {
+                timer.ResetNoPowerUpTimer();
+            }
+
+            foreach (var mission in MissionManager.Instance.currentMissions)
+            {
+                if (mission.missionType == Mission.MissionType.speed && !mission.isCompleted)
+                {
+                    mission.currentValue++;
+                    if (mission.currentValue >= mission.targetValue)
+                        mission.isCompleted = true;
+                }
+            }
             gameObject.SetActive(false);
-            spScript.SpeedUp();
+            spScript.ActivateSpeed(10f,15f,Icon);
             
         }else if (collision.tag == "Missile")
         {

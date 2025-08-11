@@ -1,22 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Repair : MonoBehaviour
+public class TwoxCoin : MonoBehaviour
 {
+    private SpecialPowers SpScript;
     private SurviveTime timer;
+    [SerializeField] private Sprite Icon;
 
     private void Start()
     {
+        SpScript = FindAnyObjectByType<SpecialPowers>();
         timer = FindAnyObjectByType<SurviveTime>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.tag == "Player")
         {
-
             if (timer != null)
             {
                 timer.ResetNoPowerUpTimer();
@@ -24,20 +23,19 @@ public class Repair : MonoBehaviour
 
             foreach (var mission in MissionManager.Instance.currentMissions)
             {
-                if (mission.missionType == Mission.MissionType.repair && !mission.isCompleted)
+                if (mission.missionType == Mission.MissionType.DoubleCoin && !mission.isCompleted)
                 {
                     mission.currentValue++;
                     if (mission.currentValue >= mission.targetValue)
                         mission.isCompleted = true;
                 }
             }
-            collision.gameObject.GetComponent<PlayerMovement>().Repair();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            SpScript.ActivateDoubleCoin(15f, Icon);
 
         }
         else if (collision.tag == "Missile")
         {
-            return;
             Animator animator = collision.GetComponent<Animator>();
             animator.Play("Explosion");
 
