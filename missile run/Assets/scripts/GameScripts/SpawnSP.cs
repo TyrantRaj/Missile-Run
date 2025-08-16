@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpawnSP : MonoBehaviour
 {
-    [SerializeField] private GameObject[] sp;
+    [SerializeField] private GameObject[] sp; // All special power prefabs
     private Transform playerPos;
-    
+
     private List<GameObject> activeSPs = new List<GameObject>();
     private float timeGap = 10f;
 
@@ -22,32 +22,54 @@ public class SpawnSP : MonoBehaviour
         {
             yield return new WaitForSeconds(timeGap);
 
-            // Clean up destroyed SPs
-            activeSPs.RemoveAll(sp => sp == null);
+            // Remove destroyed/null SPs from tracking list
+            activeSPs.RemoveAll(item => item == null);
 
-            // Spawn new SP if less than 3 are active
-            if (activeSPs.Count < 3)
-            {
-                SpawnSPWithIndicator();
-            }
+            // If already have 3 active powers, skip this spawn cycle
+            if (activeSPs.Count >= 3)
+                continue;
+
+            SpawnSPWithIndicator();
         }
     }
 
     void SpawnSPWithIndicator()
     {
-        int rand = Random.Range(0, sp.Length);
+        // Get all currently active SP types
+        HashSet<string> activeTypes = new HashSet<string>();
+        foreach (var spObj in activeSPs)
+        {
+            if (spObj != null)
+                activeTypes.Add(spObj.name.Replace("(Clone)", "").Trim());
+        }
 
-        Vector3 whereToSpawn = new Vector3(
-            playerPos.position.x + Random.Range(-100f, 100f),
-            playerPos.position.y + Random.Range(-100f, 100f),
+        // Filter available prefabs to those not already active
+        List<GameObject> availableSPs = new List<GameObject>();
+        foreach (var prefab in sp)
+        {
+            if (!activeTypes.Contains(prefab.name))
+                availableSPs.Add(prefab);
+        }
+
+        // If no unique SP is available, skip
+        if (availableSPs.Count == 0)
+            return;
+
+        // Pick a random available SP
+        GameObject chosenSP = availableSPs[Random.Range(0, availableSPs.Count)];
+
+        // Random position near player
+        Vector3 whereToSpawn = playerPos.position + new Vector3(
+            Random.Range(-100f, 100f),
+            Random.Range(-100f, 100f),
             0f
         );
 
-        GameObject newSpecialPower = Instantiate(sp[rand], whereToSpawn, Quaternion.identity);
-        activeSPs.Add(newSpecialPower);
+        // Spawn and track
+        GameObject newSP = Instantiate(chosenSP, whereToSpawn, Quaternion.identity);
+        activeSPs.Add(newSP);
 
-        // Register with IndicatorManager (same as missile)
-        FindObjectOfType<IndicatorManager>()?.AddTarget(newSpecialPower,true);
-        
+        // Register with indicator system
+        FindObjectOfType<IndicatorManager>()?.AddTarget(newSP, true);
     }
 }

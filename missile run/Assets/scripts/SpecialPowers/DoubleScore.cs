@@ -1,52 +1,45 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedUp : MonoBehaviour
+public class DoubleScore : MonoBehaviour
 {
-    private SpecialPowers spScript;
-   
+    private SpecialPowers SpScript;
+    private SurviveTime timer;
     [SerializeField] private Sprite Icon;
 
-    private SurviveTime timer;
-
-    void Start()
+    private void Start()
     {
+        SpScript = FindAnyObjectByType<SpecialPowers>();
         timer = FindAnyObjectByType<SurviveTime>();
-        spScript = GameObject.FindWithTag("Player").GetComponent<SpecialPowers>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             if (timer != null)
-            {
                 timer.ResetNoPowerUpTimer();
-            }
 
             foreach (var mission in MissionManager.Instance.currentMissions)
             {
-                if (mission.missionType == Mission.MissionType.speed && !mission.isCompleted)
+                if (mission.missionType == Mission.MissionType.DoubleScore && !mission.isCompleted)
                 {
                     mission.currentValue++;
                     if (mission.currentValue >= mission.targetValue)
                         mission.isCompleted = true;
                 }
             }
-            float duration = UpgradeItem.GetDuration(UpgradeItem.UpgradeItems.Speed);
-            spScript.ActivateSpeed(10f, duration, Icon);
+            float duration = UpgradeItem.GetDuration(UpgradeItem.UpgradeItems.DoubleScore);
+            SpScript.ActivateDoubleScore(duration,Icon); // Use our new method
             FindObjectOfType<IndicatorManager>().RemoveTarget(gameObject);
-            gameObject.SetActive(false); 
-            
-        }else if (collision.tag == "Missile")
+            Destroy(gameObject);
+        }
+        else if (collision.CompareTag("Missile"))
         {
             Animator animator = collision.GetComponent<Animator>();
             animator.Play("Explosion");
-            
             Destroy(collision.gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
             Destroy(gameObject);
         }
     }
+
 }

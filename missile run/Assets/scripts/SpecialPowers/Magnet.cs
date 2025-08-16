@@ -20,9 +20,9 @@ public class Magnet : MonoBehaviour
     {
         if (timer != null)
             timer.ResetNoPowerUpTimer();
-
-        // Example: set magnet range to 10f for 15 seconds
-        spScript.ActivateMagnet(10f, 15f, Icon);
+            float duration = UpgradeItem.GetDuration(UpgradeItem.UpgradeItems.Magnet);
+            // Example: set magnet range to 10f for 15 seconds
+            spScript.ActivateMagnet(12f,duration,Icon);
 
         // Update missions if needed
         foreach (var mission in MissionManager.Instance.currentMissions)
@@ -34,8 +34,8 @@ public class Magnet : MonoBehaviour
                     mission.isCompleted = true;
             }
         }
-
-        Destroy(gameObject);
+            FindObjectOfType<IndicatorManager>().RemoveTarget(gameObject);
+            Destroy(gameObject);
     }
     else if (collision.CompareTag("Missile"))
     {

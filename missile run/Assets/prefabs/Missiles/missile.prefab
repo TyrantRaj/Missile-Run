@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bigCoinPrefab: {fileID: 4658812214942074533, guid: 996e590f29b1c4a40937434c1e5fb3b8, type: 3}
-  bigCoinSpawnChance: 0.1
+  bigCoinSpawnChance: 0.05
   coinPrefab: {fileID: 4658812214942074533, guid: 1e03c18c2a571a64f8053cf258e58991, type: 3}
   missile_speed: 6
   rotate_speed: 120

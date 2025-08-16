@@ -30,8 +30,10 @@ public class TwoxCoin : MonoBehaviour
                         mission.isCompleted = true;
                 }
             }
+            float duration = UpgradeItem.GetDuration(UpgradeItem.UpgradeItems.DoubleCoin);
+            SpScript.ActivateDoubleCoin(duration, Icon);
+            FindObjectOfType<IndicatorManager>().RemoveTarget(gameObject);
             gameObject.SetActive(false);
-            SpScript.ActivateDoubleCoin(15f, Icon);
 
         }
         else if (collision.tag == "Missile")

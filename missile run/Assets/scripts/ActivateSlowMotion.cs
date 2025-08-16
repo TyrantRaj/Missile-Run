@@ -12,6 +12,16 @@ public class ActivateSlowMotion : MonoBehaviour, IPointerDownHandler, IPointerUp
     private bool isHolding = false;
     private bool powerDepleted = false;
 
+    private void Start()
+    {
+        int level = PlayerPrefs.GetInt(UpgradeItem.UpgradeItems.SlowMotion + "Level", 0);
+
+        // Example scaling:
+        depletionRate = Mathf.Lerp(0.3f, 0.15f, level / 4f); // higher level = slower depletion
+        rechargeRate = Mathf.Lerp(0.1f, 0.2f, level / 4f);   // higher level = faster recharge
+    }
+
+
     void Update()
     {
         // Keyboard spacebar control

@@ -8,6 +8,6 @@ public class Mission
     public int currentValue;
     public int coinReward;      
 
-    public enum MissionType { Score, Coin, destroymissiles, speed, repair, emf, survive1min, survive10min, withoutpower, withoutSlowmotion, Magnet, DoubleCoin}
+    public enum MissionType { Score, Coin, destroymissiles, speed, repair, emf, survive1min, survive10min, withoutpower, withoutSlowmotion, Magnet, DoubleCoin, DoubleScore}
     public MissionType missionType;
 }
