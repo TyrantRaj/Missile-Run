@@ -57,7 +57,7 @@ public class UpgradeItem : MonoBehaviour
         else
         {
             NextUpgradeDes.text = $"{upgradeDurations[currentLevel]}s → {upgradeDurations[currentLevel + 1]}s";
-            PriceText.text = $"{upgradePrices[currentLevel + 1]} Coins";
+            PriceText.text = $"{upgradePrices[currentLevel + 1]} COINS";
             buyBtn.interactable = totalCoins >= upgradePrices[currentLevel + 1];
         }
     }
