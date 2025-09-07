@@ -9,16 +9,27 @@ public class MissionManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        LoadMissionProgress();
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // keep it alive across scenes
+            LoadMissionProgress();
+        }
+        else
+        {
+            Destroy(gameObject); // avoid duplicates if another is created
+        }
     }
+
+
+
 
     public void CollectReward(int missionIndex)
     {
         if (missionIndex < 0 || missionIndex >= currentMissions.Count) return;
         Mission mission = currentMissions[missionIndex];
         if (!mission.isCompleted || mission.isCollected) return;
-
+        SoundManager.PlaySound(SoundManager.Sound.Archivement);
         mission.isCollected = true;
         CurrencyManager.instance.CollectCoin(mission.coinReward);
         SaveMissionProgress();

@@ -38,5 +38,7 @@ public class SceneChanger : MonoBehaviour
     public void DeleteSave()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+
     }
 }

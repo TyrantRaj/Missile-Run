@@ -41,22 +41,56 @@ public class MissionsSceneController : MonoBehaviour
             // Set mission details
             descText.text = mission.description;
             progressText.text = $"{mission.currentValue} / {mission.targetValue}";
-            rewardText.text = $"{mission.coinReward} ";
+            rewardText.text = $"{mission.coinReward}";
 
-            // Set slider value (0 to 1, clamped)
             if (progressSlider != null)
                 progressSlider.value = Mathf.Clamp01((float)mission.currentValue / mission.targetValue);
 
-            // Button state and click event
-            collectBtn.interactable = mission.isCompleted && !mission.isCollected;
+            // Show/Hide collect button
+            if (mission.isCompleted && !mission.isCollected)
+            {
+                collectBtn.gameObject.SetActive(true);
+                collectBtn.interactable = true;
+            }
+            else
+            {
+                collectBtn.gameObject.SetActive(false);
+            }
+
+            // Button click
+            int missionIndex = i; // closure
             collectBtn.onClick.RemoveAllListeners();
-            int missionIndex = i; // Capture for closure
             collectBtn.onClick.AddListener(() =>
             {
-                MissionManager.Instance.CollectReward(missionIndex);
+                // Add reward to coins using PlayerPrefs
+                PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins", 0) + mission.coinReward);
+                PlayerPrefs.Save();
+
+                // Mark mission as collected
+                mission.isCollected = true;
+
+                // Save progress so it's persistent
+                MissionManager.Instance.SaveMissionProgress();
+                SoundManager.PlaySound(SoundManager.Sound.Archivement);
+
+                // Animate the reward text scaling (coin collect effect)
+                LeanTween.scale(rewardText.gameObject, rewardText.transform.localScale * 1.5f, 0.3f)
+                    .setEasePunch()
+                    .setOnComplete(() =>
+                    {
+                        LeanTween.scale(rewardText.gameObject, rewardText.transform.localScale / 1.5f, 0.2f);
+                    });
+
+                // Animate the entry fading out slightly for collected feel
+                CanvasGroup cg = entryGO.GetComponent<CanvasGroup>();
+                if (cg == null) cg = entryGO.AddComponent<CanvasGroup>();
+                LeanTween.alphaCanvas(cg, 0.5f, 0.5f);
+
+                // Update UI
                 collectBtn.interactable = false;
-                progressText.text = "Completed!";
-                if (progressSlider != null) progressSlider.value = 1f; // Fill slider
+                collectBtn.gameObject.SetActive(false);
+                progressText.text = "Collected!";
+                if (progressSlider != null) progressSlider.value = 1f;
             });
         }
     }

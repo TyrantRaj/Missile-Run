@@ -61,7 +61,7 @@ public class Coin : MonoBehaviour
                 if (mission.currentValue >= mission.targetValue)
                 {
                     mission.isCompleted = true;
-                    SoundManager.PlaySound(SoundManager.Sound.Archivement);       
+                    //SoundManager.PlaySound(SoundManager.Sound.Archivement);       
                 }
                     
 
