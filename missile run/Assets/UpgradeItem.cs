@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class UpgradeItem : MonoBehaviour
 {
+    public PopupManager popup;
+
     public enum UpgradeItems
     {
         SlowMotion,
@@ -52,15 +54,16 @@ public class UpgradeItem : MonoBehaviour
         {
             NextUpgradeDes.text = "MAX LEVEL";
             PriceText.text = "";
-            buyBtn.interactable = false;
+            buyBtn.interactable = false; // only disable if max level
         }
         else
         {
             NextUpgradeDes.text = $"{upgradeDurations[currentLevel]}s → {upgradeDurations[currentLevel + 1]}s";
-            PriceText.text = $"{upgradePrices[currentLevel + 1]} COINS";
-            buyBtn.interactable = totalCoins >= upgradePrices[currentLevel + 1];
+            PriceText.text = $"{upgradePrices[currentLevel + 1]}";
+            buyBtn.interactable = true;
         }
     }
+
 
     private void UpdateCoinText()
     {
@@ -70,6 +73,7 @@ public class UpgradeItem : MonoBehaviour
 
     private void OnBuyClicked()
     {
+        Debug.Log("working");
         if (currentLevel >= upgradeDurations.Length - 1) return;
 
         int price = upgradePrices[currentLevel + 1];
@@ -87,6 +91,11 @@ public class UpgradeItem : MonoBehaviour
             UpdateBars();
             UpdateUI();
             UpdateCoinText();
+        }
+        else
+        {
+            popup.ShowPopup("You don’t have enough cash!");
+            Debug.Log("Dont have enough cash");
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 
 public class SwipeMenu : MonoBehaviour
 {
+    public PopupManager popup;
+
     public TMP_Text totalCoinsText;
 
     public Slider speedBar;
@@ -174,7 +177,7 @@ public class SwipeMenu : MonoBehaviour
         }
         else
         {
-            selectButtonText.text = "Buy (" + jetPrices[selectedIndex] + ")";
+            selectButtonText.text = jetPrices[selectedIndex].ToString();
         }
     }
 
@@ -182,14 +185,25 @@ public class SwipeMenu : MonoBehaviour
     {
         if (unlockedSkins[selectedIndex])
         {
-            SaveSelectedCharacter();
-            SceneManager.LoadScene("MainMenu");
+            StartCoroutine(PlaySoundAndChangeScene());
         }
         else
         {
             TryBuyJet();
         }
     }
+
+    private IEnumerator PlaySoundAndChangeScene()
+    {
+        AudioClip clip = SoundManager.PlaySoundAndReturn(SoundManager.Sound.ButtonClick);
+
+        if (clip != null)
+            yield return new WaitForSeconds(clip.length);
+
+        SaveSelectedCharacter();
+        SceneManager.LoadScene("MainMenu");
+    }
+
 
     public void TryBuyJet()
     {
@@ -209,6 +223,9 @@ public class SwipeMenu : MonoBehaviour
         else
         {
             Debug.Log("Not enough coins to unlock this jet.");
+            
+            popup.ShowPopup("You don’t have enough cash!");
+            
         }
     }
 

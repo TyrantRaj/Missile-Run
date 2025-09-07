@@ -13,7 +13,8 @@ public static class SoundManager
         PlaneSound,
         ButtonClick,
         Scroll,
-        PowerUp
+        PowerUp,
+        Archivement
         // Add more as needed
     }
 
@@ -33,9 +34,24 @@ public static class SoundManager
         }
     }
 
-
-
-   
+    //  New function: plays and also returns the AudioClip
+    public static AudioClip PlaySoundAndReturn(Sound sound)
+    {
+        if (PlayerPrefs.GetInt("VolumeMuted", 0) == 0)
+        {
+            GameObject soundGameObject = new GameObject("Sound");
+            soundGameObject.tag = "Sound";
+            AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+            AudioClip clip = GetAudioClip(sound);
+            if (clip != null)
+            {
+                audioSource.PlayOneShot(clip);
+                soundGameObject.AddComponent<SoundDestroyer>().Init(clip.length);
+            }
+            return clip;
+        }
+        return null;
+    }
 
     public static AudioSource PlayLoopingSound(Sound sound, float volume = 1f)
     {
@@ -68,7 +84,6 @@ public static class SoundManager
         }
     }
 
-
     private class SoundDestroyer : MonoBehaviour
     {
         public void Init(float duration)
@@ -93,7 +108,7 @@ public static class SoundManager
         foreach (var src in loopingSources)
         {
             if (src != null && src.isPlaying)
-                src.Pause(); 
+                src.Pause();
         }
     }
 
@@ -102,8 +117,7 @@ public static class SoundManager
         foreach (var src in loopingSources)
         {
             if (src != null && !src.isPlaying)
-                src.UnPause(); 
+                src.UnPause();
         }
     }
-
 }
