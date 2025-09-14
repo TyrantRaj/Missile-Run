@@ -71,6 +71,7 @@ public class OneHitMissile : MonoBehaviour
             {
                 timer.ResetNoHitTimer();
             }
+            collision.GetComponent<ShakeTrigger>()?.TriggerShake();
             Damage_Player();
             Explode();
 

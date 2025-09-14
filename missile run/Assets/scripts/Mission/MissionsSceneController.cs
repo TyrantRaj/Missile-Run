@@ -74,12 +74,12 @@ public class MissionsSceneController : MonoBehaviour
                 SoundManager.PlaySound(SoundManager.Sound.Archivement);
 
                 // Animate the reward text scaling (coin collect effect)
-                LeanTween.scale(rewardText.gameObject, rewardText.transform.localScale * 1.5f, 0.3f)
+                /*LeanTween.scale(rewardText.gameObject, rewardText.transform.localScale * 1.5f, 0.3f)
                     .setEasePunch()
                     .setOnComplete(() =>
                     {
                         LeanTween.scale(rewardText.gameObject, rewardText.transform.localScale / 1.5f, 0.2f);
-                    });
+                    });*/
 
                 // Animate the entry fading out slightly for collected feel
                 CanvasGroup cg = entryGO.GetComponent<CanvasGroup>();
