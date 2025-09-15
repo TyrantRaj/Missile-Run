@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
@@ -7,7 +7,7 @@ public class GameOver : MonoBehaviour
 {
     private bool isGameOverUIVisible = false;
     private bool isAnimating = false;
-
+    private bool isCoinSaved = false;
     [SerializeField] SurviveTime timer;
 
     [SerializeField] TMP_Text time_text;
@@ -37,17 +37,21 @@ public class GameOver : MonoBehaviour
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
+    [SerializeField] private GameObject doubleCoinsButton; // assign in Inspector
+
+    
+
     public void GameOverFunction()
     {
         if (isGameOverUIVisible || isAnimating) return;
+
         Time.timeScale = 1f;
         timer.timerRunning = false;
         GameUi.SetActive(false);
         spawner.canSpawn = false;
         scoremanager.StopScoring();
 
-        // Stop timer and show survival time
-        float survivedSeconds = timer.currentTime; // from SurviveTime script
+        float survivedSeconds = timer.currentTime;
         time_text.text = FormatTime(survivedSeconds);
 
         GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
@@ -60,7 +64,6 @@ public class GameOver : MonoBehaviour
         playerScript.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         ExplotionAnim.SetTrigger("Explode");
 
-        CurrencyManager.instance.SaveSessionCoinsToTotal();
         ScoreManager.Instance.StopScoring();
 
         targetCoins = CurrencyManager.instance.sessionCoins;
@@ -74,10 +77,74 @@ public class GameOver : MonoBehaviour
             StartCoroutine(AnimateHighscoreTitle());
         }
 
+        if (AdsManager.Instance != null && targetCoins > 0)
+        {
+            // Show button if ads are ready and player earned some coins
+            doubleCoinsButton.SetActive(true);
+        }
+        else
+        {
+            doubleCoinsButton.SetActive(false);
+        }
+
+        // Save only base coins for now if no ads are watched
+        
+
         StartCoroutine(ShowGameOverUI());
     }
 
-    
+    /*public void OnDoubleCoinsButton()
+    {
+        if (AdsManager.Instance != null)
+        {
+            doubleCoinsButton.SetActive(false); // hide immediately after pressing
+
+            AdsManager.Instance.rewardedAds.ShowRewardedAd(() =>
+            {
+                // Player watched ad completely → total = double
+                int doubledCoins = targetCoins;
+
+                CoinsCollectedTxt.text = doubledCoins.ToString();
+
+                // Overwrite session coins
+                CurrencyManager.instance.sessionCoins = doubledCoins;
+
+                // Save new doubled value
+                CurrencyManager.instance.SaveSessionCoinsToTotal();
+
+                Debug.Log($"Player received double coins! Total saved: {doubledCoins}");
+            });
+        }
+    }*/
+
+    public void OnDoubleCoinsButton()
+    {
+        if (AdsManager.Instance != null)
+        {
+            doubleCoinsButton.SetActive(false); // hide immediately after pressing
+
+            AdsManager.Instance.rewardedAds.ShowRewardedAd(() =>
+            {
+                // Player watched ad completely → set doubled value
+                targetCoins = targetCoins * 2;
+
+                // Overwrite session coins
+                CurrencyManager.instance.sessionCoins = targetCoins;
+                CurrencyManager.instance.SaveSessionCoinsToTotal();
+                isCoinSaved = true;
+                Debug.Log($"Player received double coins! Total saved: {targetCoins}");
+
+                // Restart the coin count-up animation with doubled coins
+                StopCoroutine(CountUpValues());
+                StartCoroutine(CountUpValues());
+            });
+        }
+    }
+
+
+
+
+
     private string FormatTime(float timeInSeconds)
     {
         int minutes = Mathf.FloorToInt(timeInSeconds / 60f);
@@ -235,6 +302,11 @@ public class GameOver : MonoBehaviour
     {
         StartCoroutine(HideGameOverUI(() =>
         {
+            if (!isCoinSaved)
+            {
+            CurrencyManager.instance.SaveSessionCoinsToTotal();
+
+            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }));
     }
@@ -243,6 +315,10 @@ public class GameOver : MonoBehaviour
     {
         StartCoroutine(HideGameOverUI(() =>
         {
+            if (!isCoinSaved) { 
+
+            CurrencyManager.instance.SaveSessionCoinsToTotal();
+            }
             SceneManager.LoadScene("MainMenu");
         }));
     }
@@ -281,4 +357,6 @@ public class GameOver : MonoBehaviour
             indicatorMgr.RemoveTarget(missile);
         }
     }
+
+
 }

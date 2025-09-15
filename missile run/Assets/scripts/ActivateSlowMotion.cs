@@ -31,7 +31,7 @@ public class ActivateSlowMotion : MonoBehaviour, IPointerDownHandler, IPointerUp
             {
                 isHolding = true;
                 PowerScript.EnableSlowMotion();
-                Debug.Log("Space down - Slow motion enabled");
+                //Debug.Log("Space down - Slow motion enabled");
             }
         }
 
@@ -40,7 +40,7 @@ public class ActivateSlowMotion : MonoBehaviour, IPointerDownHandler, IPointerUp
             if (isHolding)
             {
                 PowerScript.DisableSlowMotion();
-                Debug.Log("Space released - Slow motion disabled");
+               // Debug.Log("Space released - Slow motion disabled");
             }
 
             isHolding = false;
